@@ -23,7 +23,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f8bf6453-5801-4780-9db1-3db587b557d8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../CSA_EER_V5.graphml" beforeDir="false" afterPath="$PROJECT_DIR$/../CSA_EER_V5.graphml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CSAdatabase.db" beforeDir="false" afterPath="$PROJECT_DIR$/../CSAdatabase.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.lock" afterDir="false" />
@@ -33,13 +32,13 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/ProjectMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/ProjectMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/controller/ProjectMainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/controller/ProjectMainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/kuleuven/csa/controller/ProjectMainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/kuleuven/csa/controller/ProjectMainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/kuleuven/csa/model/domain/Aanbieding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/kuleuven/csa/model/domain/Aanbieding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/kuleuven/csa/model/domain/Klant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/kuleuven/csa/model/domain/Klant.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,13 +118,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../hibernate-jpa-start" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -140,7 +139,7 @@
       <command value="gradle run" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.project-template [run]">
+  <component name="RunManager" selected="Application.ProjectMain">
     <configuration name="ProjectMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="be.kuleuven.csa.ProjectMain" />
       <module name="project-template.main" />
@@ -153,6 +152,25 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="project-template [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="dependencies" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
     </configuration>
     <configuration name="project-template [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -175,6 +193,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.project-template [dependencies]" />
         <item itemvalue="Gradle.project-template [run]" />
         <item itemvalue="Application.ProjectMain" />
       </list>
@@ -208,12 +227,18 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/../.." />
+    </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="809" y="332" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608653296794">
+    <state x="809" y="332" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608662473753">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="809" y="332" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1040@0.0.2560.1040" timestamp="1608653296794" />
+    <state x="809" y="332" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1040@0.0.2560.1040" timestamp="1608662473753" />
     <state x="2047" y="359" key="#com.intellij.fileTypes.FileTypeChooser/1440.23.1920.1053/0.23.1440.877@1440.23.1920.1053" timestamp="1604571080590" />
     <state x="651" y="239" key="#com.intellij.ide.util.MemberChooser" timestamp="1608659853536">
       <screen x="0" y="0" width="2560" height="1040" />
@@ -223,28 +248,32 @@
       <screen x="1440" y="23" width="1920" height="1053" />
     </state>
     <state x="2273" y="263" width="729" height="573" key="#xdebugger.evaluate/1440.23.1920.1053/0.23.1440.877@1440.23.1920.1053" timestamp="1604572497531" />
-    <state x="904" y="258" key="FileChooserDialogImpl" timestamp="1608660526835">
+    <state x="904" y="258" key="FileChooserDialogImpl" timestamp="1608661397842">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="904" y="258" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1608660526835" />
-    <state width="1878" height="356" key="GridCell.Tab.0.bottom" timestamp="1604573785520">
-      <screen x="1440" y="23" width="1920" height="1053" />
+    <state x="904" y="258" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1608661397842" />
+    <state width="2500" height="279" key="GridCell.Tab.0.bottom" timestamp="1608672162891">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
+    <state width="2500" height="279" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1608672162891" />
     <state width="1878" height="356" key="GridCell.Tab.0.bottom/1440.23.1920.1053/0.23.1440.877@1440.23.1920.1053" timestamp="1604573785520" />
     <state width="1878" height="288" key="GridCell.Tab.0.bottom/1440.23.1920.1057/0.23.1440.873@1440.23.1920.1057" timestamp="1604567232654" />
-    <state width="1878" height="356" key="GridCell.Tab.0.center" timestamp="1604573785518">
-      <screen x="1440" y="23" width="1920" height="1053" />
+    <state width="2500" height="279" key="GridCell.Tab.0.center" timestamp="1608672162890">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
+    <state width="2500" height="279" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1608672162890" />
     <state width="1878" height="356" key="GridCell.Tab.0.center/1440.23.1920.1053/0.23.1440.877@1440.23.1920.1053" timestamp="1604573785518" />
     <state width="1878" height="288" key="GridCell.Tab.0.center/1440.23.1920.1057/0.23.1440.873@1440.23.1920.1057" timestamp="1604567232653" />
-    <state width="1878" height="356" key="GridCell.Tab.0.left" timestamp="1604573785517">
-      <screen x="1440" y="23" width="1920" height="1053" />
+    <state width="2500" height="279" key="GridCell.Tab.0.left" timestamp="1608672162890">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
+    <state width="2500" height="279" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1608672162890" />
     <state width="1878" height="356" key="GridCell.Tab.0.left/1440.23.1920.1053/0.23.1440.877@1440.23.1920.1053" timestamp="1604573785517" />
     <state width="1878" height="288" key="GridCell.Tab.0.left/1440.23.1920.1057/0.23.1440.873@1440.23.1920.1057" timestamp="1604567232653" />
-    <state width="1878" height="356" key="GridCell.Tab.0.right" timestamp="1604573785519">
-      <screen x="1440" y="23" width="1920" height="1053" />
+    <state width="2500" height="279" key="GridCell.Tab.0.right" timestamp="1608672162891">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
+    <state width="2500" height="279" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1608672162891" />
     <state width="1878" height="356" key="GridCell.Tab.0.right/1440.23.1920.1053/0.23.1440.877@1440.23.1920.1053" timestamp="1604573785519" />
     <state width="1878" height="288" key="GridCell.Tab.0.right/1440.23.1920.1057/0.23.1440.873@1440.23.1920.1057" timestamp="1604567232654" />
     <state width="1878" height="356" key="GridCell.Tab.1.bottom" timestamp="1604573785522">
@@ -263,11 +292,15 @@
       <screen x="1440" y="23" width="1920" height="1053" />
     </state>
     <state width="1878" height="356" key="GridCell.Tab.1.right/1440.23.1920.1053/0.23.1440.877@1440.23.1920.1053" timestamp="1604573785522" />
-    <state x="625" y="162" key="SettingsEditor" timestamp="1608651142236">
+    <state x="625" y="162" key="SettingsEditor" timestamp="1608666178308">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="625" y="162" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1608651142236" />
+    <state x="625" y="162" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1608666178308" />
     <state x="1909" y="188" key="SettingsEditor/1440.23.1920.1057/0.23.1440.873@1440.23.1920.1057" timestamp="1604566801549" />
+    <state x="1097" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608662225085">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1097" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1040@0.0.2560.1040" timestamp="1608662225085" />
     <state x="2065" y="255" width="670" height="675" key="run.anything.popup" timestamp="1604567069727">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
