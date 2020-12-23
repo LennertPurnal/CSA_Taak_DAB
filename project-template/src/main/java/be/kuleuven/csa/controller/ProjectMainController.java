@@ -1,6 +1,7 @@
 package be.kuleuven.csa.controller;
 
 import be.kuleuven.csa.ProjectMain;
+import be.kuleuven.csa.model.databaseConn.CsaDatabaseConn;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -28,6 +29,8 @@ public class ProjectMainController {
         btnKlanten.setOnAction(e -> showBeheerScherm("klanten"));
         btnInschrijvingen.setOnAction(e -> showBeheerScherm("inschrijvingen"));
         btnProducten.setOnAction(e -> showBeheerScherm("producten"));
+
+        CsaDatabaseConn.getDatabaseConn().setUp();
     }
 
     private void showBeheerScherm(String id) {

@@ -1,4 +1,6 @@
-package be.kuleuven.csa.model.domain;
+package be.kuleuven.csa.model.databaseConn;
+
+import be.kuleuven.csa.model.domain.CsaEntity;
 
 import javax.persistence.EntityManager;
 
@@ -9,9 +11,9 @@ public class CsaDatabaseRepo {
         this.entityManager = entityManager;
     }
 
-    public void saveNewKlant(Klant klant){
+    public void saveNewRecord(CsaEntity record){
             entityManager.getTransaction().begin();
-            entityManager.persist(klant);
+            entityManager.persist(record);
             entityManager.getTransaction().commit();
     }
 }

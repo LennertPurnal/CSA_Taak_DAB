@@ -1,14 +1,11 @@
 package be.kuleuven.csa;
 
-import be.kuleuven.csa.model.domain.CsaDatabaseRepo;
-import be.kuleuven.csa.model.domain.Klant;
+import be.kuleuven.csa.model.databaseConn.CsaDatabaseConn;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import javax.persistence.Persistence;
 
 public class ProjectMain extends Application {
 
@@ -31,12 +28,8 @@ public class ProjectMain extends Application {
     }
 
     public static void main(String[] args) {
+        //database connection setup gebeurt in projectmaincontroller.initialize
         launch();
-        var sessionfactory = Persistence.createEntityManagerFactory("be.kuleuven.csa.model.domain");
-        var entitymanager = sessionfactory.createEntityManager();
-
-        var repo = new CsaDatabaseRepo(entitymanager);
-        repo.saveNewKlant(new Klant("Jozef", "Tongeren", 3700, "Kleinstraat", 10, "België"));
-        entitymanager.close();
+        CsaDatabaseConn.getDatabaseConn().tearDown();
     }
 }

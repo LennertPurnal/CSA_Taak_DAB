@@ -1,15 +1,26 @@
 package be.kuleuven.csa.model.domain;
 
+import javax.persistence.*;
 import java.util.Date;
 
-public class Contract {
+@Entity
+public class Contract implements CsaEntity{
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int contractID;
-    private String pakketnaam;
-    private int klantID;
-    private int ondernemingsNR;
+    @OneToOne
+    @JoinColumn
+    private Pakket pakketnaam;
+    @OneToOne
+    @JoinColumn
+    private Klant klantID;
+    @OneToOne
+    @JoinColumn
+    private Landbouwbedrijf ondernemingsNR;
+    @Column
     private Date begindatum;
 
-    public Contract(int contractID, String pakketnaam, int klantID, int ondernemingsNR, Date begindatum) {
+    public Contract(int contractID, Pakket pakketnaam, Klant klantID, Landbouwbedrijf ondernemingsNR, Date begindatum) {
         this.contractID = contractID;
         this.pakketnaam = pakketnaam;
         this.klantID = klantID;

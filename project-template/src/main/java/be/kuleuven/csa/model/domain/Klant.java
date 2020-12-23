@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Klant {
+public class Klant implements CsaEntity{
     @Column
     private String naam;
     @Id
@@ -30,5 +30,9 @@ public class Klant {
         this.straat = straat;
         this.huisnummer = huisnummer;
         this.land = land;
+    }
+
+    public int getKlantID() {
+        return klantID;
     }
 }
