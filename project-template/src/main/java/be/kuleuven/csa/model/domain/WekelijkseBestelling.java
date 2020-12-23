@@ -2,7 +2,8 @@ package be.kuleuven.csa.model.domain;
 
 import java.util.Map;
 
-public class WekelijkseBestelling {
+
+public class WekelijkseBestelling implements CsaEntity{
     private int bestelNR;
     private int klantID;
     private int contractID; //valt nog te bekijken (misschien beter aanbieding?)

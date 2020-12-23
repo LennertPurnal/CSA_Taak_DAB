@@ -1,22 +1,27 @@
 package be.kuleuven.csa.model.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class Aanbieding {
-    @Column
-    private int ondernemingsNR;
+public class Aanbieding implements CsaEntity, Serializable {
     @Id
-    private String pakketnaam;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "pakketnaam")
+    private Pakket pakket;
+    @Id
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "ondernemingsNR")
+    private Landbouwbedrijf landbouwbedrijf;
     @Column
     private int prijs;
 
 
-    public Aanbieding(int ondernemingsNR, String pakketnaam, int prijs) {
-        this.ondernemingsNR = ondernemingsNR;
-        this.pakketnaam = pakketnaam;
+    public Aanbieding(Pakket pakket, Landbouwbedrijf landbouwbedrijf, int prijs) {
+        this.pakket = pakket;
+        this.landbouwbedrijf = landbouwbedrijf;
         this.prijs = prijs;
     }
+
+
 }
