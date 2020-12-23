@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">1</div>
+<div class="counter">3</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">1.474s</div>
+<div class="counter">4.253s</div>
 <p>duration</p>
 </div>
 </td>
@@ -81,8 +81,18 @@
 </tr>
 </thead>
 <tr>
+<td class="success">saveNewKlantTest</td>
+<td class="success">0.467s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">saveNewLandbouwbedrijfTest</td>
+<td class="success">0.348s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
 <td class="success">savenewAanbiedingTest</td>
-<td class="success">1.474s</td>
+<td class="success">3.438s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -91,53 +101,129 @@
 <h2>Standard output</h2>
 <span class="code">
 <pre>Hibernate: insert into Aanbieding (prijs, pakketnaam, ondernemingsNR) values (?, ?, ?)
+Hibernate: insert into Landbouwbedrijf (gemeente, land, naam, postcode, ondernemingsNR) values (?, ?, ?, ?, ?)
+Hibernate: select next_val as id_val from hibernate_sequence
+Hibernate: update hibernate_sequence set next_val= ? where next_val=?
+Hibernate: insert into Klant (gemeente, huisnummer, land, naam, postcode, straat, klantID) values (?, ?, ?, ?, ?, ?, ?)
 </pre>
 </span>
 </div>
 <div id="tab2" class="tab">
 <h2>Standard error</h2>
 <span class="code">
-<pre>dec. 23, 2020 4:10:14 P.M. org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation
+<pre>dec. 23, 2020 8:29:20 P.M. org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation
 INFO: HHH000204: Processing PersistenceUnitInfo [name: be.kuleuven.csa.model.domain]
-dec. 23, 2020 4:10:14 P.M. org.hibernate.Version logVersion
+dec. 23, 2020 8:29:21 P.M. org.hibernate.Version logVersion
 INFO: HHH000412: Hibernate ORM core version 5.4.23.Final
-dec. 23, 2020 4:10:14 P.M. org.hibernate.annotations.common.reflection.java.JavaReflectionManager &lt;clinit&gt;
+dec. 23, 2020 8:29:21 P.M. org.hibernate.annotations.common.reflection.java.JavaReflectionManager &lt;clinit&gt;
 INFO: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-dec. 23, 2020 4:10:14 P.M. org.hibernate.dialect.Dialect &lt;init&gt;
+dec. 23, 2020 8:29:21 P.M. org.hibernate.dialect.Dialect &lt;init&gt;
 INFO: HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
-dec. 23, 2020 4:10:15 P.M. org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+dec. 23, 2020 8:29:21 P.M. org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 WARN: HHH10001002: Using Hibernate built-in connection pool (not for production use!)
-dec. 23, 2020 4:10:15 P.M. org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+dec. 23, 2020 8:29:21 P.M. org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH10001005: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:CSAdatabase.db]
-dec. 23, 2020 4:10:15 P.M. org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+dec. 23, 2020 8:29:21 P.M. org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH10001001: Connection properties: {password=****, autocommit=true, user=}
-dec. 23, 2020 4:10:15 P.M. org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+dec. 23, 2020 8:29:21 P.M. org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH10001003: Autocommit mode: true
-dec. 23, 2020 4:10:15 P.M. org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections &lt;init&gt;
+dec. 23, 2020 8:29:21 P.M. org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections &lt;init&gt;
 INFO: HHH000115: Hibernate connection pool size: 20 (min=1)
-dec. 23, 2020 4:10:15 P.M. org.hibernate.dialect.Dialect &lt;init&gt;
+dec. 23, 2020 8:29:22 P.M. org.hibernate.dialect.Dialect &lt;init&gt;
 INFO: HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
-dec. 23, 2020 4:10:15 P.M. org.hibernate.tuple.PojoInstantiator &lt;init&gt;
+dec. 23, 2020 8:29:22 P.M. org.hibernate.tuple.PojoInstantiator &lt;init&gt;
 INFO: HHH000182: No default (no-argument) constructor for class: be.kuleuven.csa.model.domain.Aanbieding (class must be instantiated by Interceptor)
-dec. 23, 2020 4:10:15 P.M. org.hibernate.mapping.RootClass checkCompositeIdentifier
+dec. 23, 2020 8:29:22 P.M. org.hibernate.mapping.RootClass checkCompositeIdentifier
 WARN: HHH000038: Composite-id class does not override equals(): be.kuleuven.csa.model.domain.Aanbieding
-dec. 23, 2020 4:10:15 P.M. org.hibernate.mapping.RootClass checkCompositeIdentifier
+dec. 23, 2020 8:29:22 P.M. org.hibernate.mapping.RootClass checkCompositeIdentifier
 WARN: HHH000039: Composite-id class does not override hashCode(): be.kuleuven.csa.model.domain.Aanbieding
-dec. 23, 2020 4:10:15 P.M. org.hibernate.tuple.PojoInstantiator &lt;init&gt;
+dec. 23, 2020 8:29:22 P.M. org.hibernate.tuple.PojoInstantiator &lt;init&gt;
 INFO: HHH000182: No default (no-argument) constructor for class: be.kuleuven.csa.model.domain.Product (class must be instantiated by Interceptor)
-dec. 23, 2020 4:10:15 P.M. org.hibernate.tuple.PojoInstantiator &lt;init&gt;
+dec. 23, 2020 8:29:23 P.M. org.hibernate.tuple.PojoInstantiator &lt;init&gt;
 INFO: HHH000182: No default (no-argument) constructor for class: be.kuleuven.csa.model.domain.Aanbieding (class must be instantiated by Interceptor)
-dec. 23, 2020 4:10:15 P.M. org.hibernate.tuple.PojoInstantiator &lt;init&gt;
+dec. 23, 2020 8:29:23 P.M. org.hibernate.tuple.PojoInstantiator &lt;init&gt;
 INFO: HHH000182: No default (no-argument) constructor for class: be.kuleuven.csa.model.domain.Klant (class must be instantiated by Interceptor)
-dec. 23, 2020 4:10:15 P.M. org.hibernate.tuple.PojoInstantiator &lt;init&gt;
+dec. 23, 2020 8:29:23 P.M. org.hibernate.tuple.PojoInstantiator &lt;init&gt;
 INFO: HHH000182: No default (no-argument) constructor for class: be.kuleuven.csa.model.domain.Landbouwbedrijf (class must be instantiated by Interceptor)
-dec. 23, 2020 4:10:15 P.M. org.hibernate.tuple.PojoInstantiator &lt;init&gt;
+dec. 23, 2020 8:29:23 P.M. org.hibernate.tuple.PojoInstantiator &lt;init&gt;
 INFO: HHH000182: No default (no-argument) constructor for class: be.kuleuven.csa.model.domain.Contract (class must be instantiated by Interceptor)
-dec. 23, 2020 4:10:15 P.M. org.hibernate.tuple.PojoInstantiator &lt;init&gt;
+dec. 23, 2020 8:29:23 P.M. org.hibernate.tuple.PojoInstantiator &lt;init&gt;
 INFO: HHH000182: No default (no-argument) constructor for class: be.kuleuven.csa.model.domain.Pakket (class must be instantiated by Interceptor)
-dec. 23, 2020 4:10:15 P.M. org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
+dec. 23, 2020 8:29:23 P.M. org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
 INFO: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-dec. 23, 2020 4:10:15 P.M. org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PoolState stop
+dec. 23, 2020 8:29:23 P.M. org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PoolState stop
+INFO: HHH10001008: Cleaning up connection pool [jdbc:sqlite:CSAdatabase.db]
+dec. 23, 2020 8:29:23 P.M. org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation
+INFO: HHH000204: Processing PersistenceUnitInfo [name: be.kuleuven.csa.model.domain]
+dec. 23, 2020 8:29:23 P.M. org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+WARN: HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+dec. 23, 2020 8:29:23 P.M. org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001005: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:CSAdatabase.db]
+dec. 23, 2020 8:29:23 P.M. org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001001: Connection properties: {password=****, autocommit=true, user=}
+dec. 23, 2020 8:29:23 P.M. org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001003: Autocommit mode: true
+dec. 23, 2020 8:29:24 P.M. org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections &lt;init&gt;
+INFO: HHH000115: Hibernate connection pool size: 20 (min=1)
+dec. 23, 2020 8:29:24 P.M. org.hibernate.dialect.Dialect &lt;init&gt;
+INFO: HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+dec. 23, 2020 8:29:24 P.M. org.hibernate.tuple.PojoInstantiator &lt;init&gt;
+INFO: HHH000182: No default (no-argument) constructor for class: be.kuleuven.csa.model.domain.Aanbieding (class must be instantiated by Interceptor)
+dec. 23, 2020 8:29:24 P.M. org.hibernate.mapping.RootClass checkCompositeIdentifier
+WARN: HHH000038: Composite-id class does not override equals(): be.kuleuven.csa.model.domain.Aanbieding
+dec. 23, 2020 8:29:24 P.M. org.hibernate.mapping.RootClass checkCompositeIdentifier
+WARN: HHH000039: Composite-id class does not override hashCode(): be.kuleuven.csa.model.domain.Aanbieding
+dec. 23, 2020 8:29:24 P.M. org.hibernate.tuple.PojoInstantiator &lt;init&gt;
+INFO: HHH000182: No default (no-argument) constructor for class: be.kuleuven.csa.model.domain.Product (class must be instantiated by Interceptor)
+dec. 23, 2020 8:29:24 P.M. org.hibernate.tuple.PojoInstantiator &lt;init&gt;
+INFO: HHH000182: No default (no-argument) constructor for class: be.kuleuven.csa.model.domain.Aanbieding (class must be instantiated by Interceptor)
+dec. 23, 2020 8:29:24 P.M. org.hibernate.tuple.PojoInstantiator &lt;init&gt;
+INFO: HHH000182: No default (no-argument) constructor for class: be.kuleuven.csa.model.domain.Klant (class must be instantiated by Interceptor)
+dec. 23, 2020 8:29:24 P.M. org.hibernate.tuple.PojoInstantiator &lt;init&gt;
+INFO: HHH000182: No default (no-argument) constructor for class: be.kuleuven.csa.model.domain.Landbouwbedrijf (class must be instantiated by Interceptor)
+dec. 23, 2020 8:29:24 P.M. org.hibernate.tuple.PojoInstantiator &lt;init&gt;
+INFO: HHH000182: No default (no-argument) constructor for class: be.kuleuven.csa.model.domain.Contract (class must be instantiated by Interceptor)
+dec. 23, 2020 8:29:24 P.M. org.hibernate.tuple.PojoInstantiator &lt;init&gt;
+INFO: HHH000182: No default (no-argument) constructor for class: be.kuleuven.csa.model.domain.Pakket (class must be instantiated by Interceptor)
+dec. 23, 2020 8:29:24 P.M. org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
+INFO: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+dec. 23, 2020 8:29:24 P.M. org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PoolState stop
+INFO: HHH10001008: Cleaning up connection pool [jdbc:sqlite:CSAdatabase.db]
+dec. 23, 2020 8:29:24 P.M. org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation
+INFO: HHH000204: Processing PersistenceUnitInfo [name: be.kuleuven.csa.model.domain]
+dec. 23, 2020 8:29:24 P.M. org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+WARN: HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+dec. 23, 2020 8:29:24 P.M. org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001005: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:CSAdatabase.db]
+dec. 23, 2020 8:29:24 P.M. org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001001: Connection properties: {password=****, autocommit=true, user=}
+dec. 23, 2020 8:29:24 P.M. org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001003: Autocommit mode: true
+dec. 23, 2020 8:29:24 P.M. org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections &lt;init&gt;
+INFO: HHH000115: Hibernate connection pool size: 20 (min=1)
+dec. 23, 2020 8:29:24 P.M. org.hibernate.dialect.Dialect &lt;init&gt;
+INFO: HHH000400: Using dialect: org.hibernate.dialect.SQLiteDialect
+dec. 23, 2020 8:29:24 P.M. org.hibernate.tuple.PojoInstantiator &lt;init&gt;
+INFO: HHH000182: No default (no-argument) constructor for class: be.kuleuven.csa.model.domain.Aanbieding (class must be instantiated by Interceptor)
+dec. 23, 2020 8:29:24 P.M. org.hibernate.mapping.RootClass checkCompositeIdentifier
+WARN: HHH000038: Composite-id class does not override equals(): be.kuleuven.csa.model.domain.Aanbieding
+dec. 23, 2020 8:29:24 P.M. org.hibernate.mapping.RootClass checkCompositeIdentifier
+WARN: HHH000039: Composite-id class does not override hashCode(): be.kuleuven.csa.model.domain.Aanbieding
+dec. 23, 2020 8:29:24 P.M. org.hibernate.tuple.PojoInstantiator &lt;init&gt;
+INFO: HHH000182: No default (no-argument) constructor for class: be.kuleuven.csa.model.domain.Product (class must be instantiated by Interceptor)
+dec. 23, 2020 8:29:24 P.M. org.hibernate.tuple.PojoInstantiator &lt;init&gt;
+INFO: HHH000182: No default (no-argument) constructor for class: be.kuleuven.csa.model.domain.Aanbieding (class must be instantiated by Interceptor)
+dec. 23, 2020 8:29:24 P.M. org.hibernate.tuple.PojoInstantiator &lt;init&gt;
+INFO: HHH000182: No default (no-argument) constructor for class: be.kuleuven.csa.model.domain.Klant (class must be instantiated by Interceptor)
+dec. 23, 2020 8:29:24 P.M. org.hibernate.tuple.PojoInstantiator &lt;init&gt;
+INFO: HHH000182: No default (no-argument) constructor for class: be.kuleuven.csa.model.domain.Landbouwbedrijf (class must be instantiated by Interceptor)
+dec. 23, 2020 8:29:24 P.M. org.hibernate.tuple.PojoInstantiator &lt;init&gt;
+INFO: HHH000182: No default (no-argument) constructor for class: be.kuleuven.csa.model.domain.Contract (class must be instantiated by Interceptor)
+dec. 23, 2020 8:29:24 P.M. org.hibernate.tuple.PojoInstantiator &lt;init&gt;
+INFO: HHH000182: No default (no-argument) constructor for class: be.kuleuven.csa.model.domain.Pakket (class must be instantiated by Interceptor)
+dec. 23, 2020 8:29:24 P.M. org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
+INFO: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+dec. 23, 2020 8:29:24 P.M. org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PoolState stop
 INFO: HHH10001008: Cleaning up connection pool [jdbc:sqlite:CSAdatabase.db]
 </pre>
 </span>
@@ -150,7 +236,7 @@ INFO: HHH10001008: Cleaning up connection pool [jdbc:sqlite:CSAdatabase.db]
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 6.3</a> at 23 dec. 2020 16:10:16</p>
+<a href="http://www.gradle.org">Gradle 6.3</a> at 23 dec. 2020 20:29:24</p>
 </div>
 </div>
 </body>
