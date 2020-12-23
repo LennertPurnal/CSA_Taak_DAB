@@ -52,11 +52,12 @@ public class newRecordTest {
     public void savenewAanbiedingTest(){
         Pakket pakket = new Pakket("medium", 2, 2, "korte beschrijving");
         Landbouwbedrijf landbouwbedrijf = new Landbouwbedrijf(1, "testbedrijf", "stadofdorp", 666);
-        //databaseRepo.saveNewRecord(landbouwbedrijf);
-        //databaseRepo.saveNewRecord(pakket);
+        databaseRepo.saveNewRecord(landbouwbedrijf);
+        databaseRepo.saveNewRecord(pakket);
 
 
-        Aanbieding aanbieding = new Aanbieding(pakket, landbouwbedrijf, 100);
+        Aanbieding aanbieding = new Aanbieding(pakket, landbouwbedrijf, 100)
+                ;
         pakket.voegAanbiedingToe(aanbieding);
         landbouwbedrijf.voegAanbiedingToe(aanbieding);
         databaseRepo.saveNewRecord(aanbieding);
