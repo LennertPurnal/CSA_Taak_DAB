@@ -31,12 +31,14 @@ public class ProjectMain extends Application {
     }
 
     public static void main(String[] args) {
-        launch();
+       launch();
         var sessionfactory = Persistence.createEntityManagerFactory("be.kuleuven.csa.model.domain");
         var entitymanager = sessionfactory.createEntityManager();
 
         var repo = new CsaDatabaseRepo(entitymanager);
         repo.saveNewKlant(new Klant("Jozef", "Tongeren", 3700, "Kleinstraat", 10, "België"));
         entitymanager.close();
+
+
     }
 }

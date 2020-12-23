@@ -23,7 +23,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f8bf6453-5801-4780-9db1-3db587b557d8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../CSAdatabase.db" beforeDir="false" afterPath="$PROJECT_DIR$/../CSAdatabase.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.bin" afterDir="false" />
@@ -32,13 +31,28 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/ProjectMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/ProjectMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/controller/ProjectMainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/controller/ProjectMainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/kuleuven/csa/controller/ProjectMainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/kuleuven/csa/controller/ProjectMainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/kuleuven/csa/model/domain/Aanbieding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/kuleuven/csa/model/domain/Aanbieding.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/kuleuven/csa/model/domain/Klant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/kuleuven/csa/model/domain/Klant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSAdatabase.db" beforeDir="false" afterPath="$PROJECT_DIR$/CSAdatabase.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/ProjectMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/controller/BeheerBoerderijenController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/controller/BeheerInschrijvingenController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/controller/BeheerKlantenController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/controller/BeheerProductenController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/controller/BeheerTipsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/controller/ProjectMainController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/model/domain/Aanbieding.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/model/domain/Contract.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/model/domain/CsaDatabaseRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/model/domain/Klant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/model/domain/Landbouwbedrijf.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/model/domain/Pakket.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/model/domain/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/model/domain/WekelijkseBestelling.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/kuleuven/csa/ProjectMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/kuleuven/csa/ProjectMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,13 +132,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../project-template" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="SDKs" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.53333336" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -140,7 +154,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.ProjectMain">
-    <configuration name="ProjectMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="ProjectMain" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="be.kuleuven.csa.ProjectMain" />
       <module name="project-template.main" />
       <extension name="coverage">
@@ -195,11 +209,10 @@
       <list>
         <item itemvalue="Gradle.project-template [dependencies]" />
         <item itemvalue="Gradle.project-template [run]" />
-        <item itemvalue="Application.ProjectMain" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -222,12 +235,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
@@ -244,63 +258,85 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="651" y="239" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1040@0.0.2560.1040" timestamp="1608659853536" />
+    <state x="808" y="469" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1608722820375">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="808" y="469" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1160/1920.145.1680.1010@0.0.1920.1160" timestamp="1608722820375" />
     <state x="2273" y="263" width="729" height="573" key="#xdebugger.evaluate" timestamp="1604572497531">
       <screen x="1440" y="23" width="1920" height="1053" />
     </state>
     <state x="2273" y="263" width="729" height="573" key="#xdebugger.evaluate/1440.23.1920.1053/0.23.1440.877@1440.23.1920.1053" timestamp="1604572497531" />
-    <state x="904" y="258" key="FileChooserDialogImpl" timestamp="1608661397842">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="678" y="288" key="FileChooserDialogImpl" timestamp="1608728816935">
+      <screen x="0" y="0" width="1920" height="1160" />
     </state>
+    <state x="678" y="288" key="FileChooserDialogImpl/0.0.1920.1160/1920.145.1680.1010@0.0.1920.1160" timestamp="1608728816935" />
     <state x="904" y="258" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1608661397842" />
-    <state width="2500" height="279" key="GridCell.Tab.0.bottom" timestamp="1608672162891">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="1637" height="244" key="GridCell.Tab.0.bottom" timestamp="1608734776243">
+      <screen x="1920" y="145" width="1680" height="1010" />
     </state>
+    <state width="1877" height="881" key="GridCell.Tab.0.bottom/0.0.1920.1160/1920.145.1680.1010@0.0.1920.1160" timestamp="1608732730705" />
+    <state width="1637" height="244" key="GridCell.Tab.0.bottom/0.0.1920.1160/1920.145.1680.1010@1920.145.1680.1010" timestamp="1608734776243" />
     <state width="2500" height="279" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1608672162891" />
     <state width="1878" height="356" key="GridCell.Tab.0.bottom/1440.23.1920.1053/0.23.1440.877@1440.23.1920.1053" timestamp="1604573785520" />
     <state width="1878" height="288" key="GridCell.Tab.0.bottom/1440.23.1920.1057/0.23.1440.873@1440.23.1920.1057" timestamp="1604567232654" />
-    <state width="2500" height="279" key="GridCell.Tab.0.center" timestamp="1608672162890">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="1637" height="244" key="GridCell.Tab.0.center" timestamp="1608734776243">
+      <screen x="1920" y="145" width="1680" height="1010" />
     </state>
+    <state width="1877" height="881" key="GridCell.Tab.0.center/0.0.1920.1160/1920.145.1680.1010@0.0.1920.1160" timestamp="1608732730705" />
+    <state width="1637" height="244" key="GridCell.Tab.0.center/0.0.1920.1160/1920.145.1680.1010@1920.145.1680.1010" timestamp="1608734776243" />
     <state width="2500" height="279" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1608672162890" />
     <state width="1878" height="356" key="GridCell.Tab.0.center/1440.23.1920.1053/0.23.1440.877@1440.23.1920.1053" timestamp="1604573785518" />
     <state width="1878" height="288" key="GridCell.Tab.0.center/1440.23.1920.1057/0.23.1440.873@1440.23.1920.1057" timestamp="1604567232653" />
-    <state width="2500" height="279" key="GridCell.Tab.0.left" timestamp="1608672162890">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="1637" height="244" key="GridCell.Tab.0.left" timestamp="1608734776243">
+      <screen x="1920" y="145" width="1680" height="1010" />
     </state>
+    <state width="1877" height="881" key="GridCell.Tab.0.left/0.0.1920.1160/1920.145.1680.1010@0.0.1920.1160" timestamp="1608732730705" />
+    <state width="1637" height="244" key="GridCell.Tab.0.left/0.0.1920.1160/1920.145.1680.1010@1920.145.1680.1010" timestamp="1608734776243" />
     <state width="2500" height="279" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1608672162890" />
     <state width="1878" height="356" key="GridCell.Tab.0.left/1440.23.1920.1053/0.23.1440.877@1440.23.1920.1053" timestamp="1604573785517" />
     <state width="1878" height="288" key="GridCell.Tab.0.left/1440.23.1920.1057/0.23.1440.873@1440.23.1920.1057" timestamp="1604567232653" />
-    <state width="2500" height="279" key="GridCell.Tab.0.right" timestamp="1608672162891">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="1637" height="244" key="GridCell.Tab.0.right" timestamp="1608734776243">
+      <screen x="1920" y="145" width="1680" height="1010" />
     </state>
+    <state width="1877" height="881" key="GridCell.Tab.0.right/0.0.1920.1160/1920.145.1680.1010@0.0.1920.1160" timestamp="1608732730705" />
+    <state width="1637" height="244" key="GridCell.Tab.0.right/0.0.1920.1160/1920.145.1680.1010@1920.145.1680.1010" timestamp="1608734776243" />
     <state width="2500" height="279" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1608672162891" />
     <state width="1878" height="356" key="GridCell.Tab.0.right/1440.23.1920.1053/0.23.1440.877@1440.23.1920.1053" timestamp="1604573785519" />
     <state width="1878" height="288" key="GridCell.Tab.0.right/1440.23.1920.1057/0.23.1440.873@1440.23.1920.1057" timestamp="1604567232654" />
-    <state width="1878" height="356" key="GridCell.Tab.1.bottom" timestamp="1604573785522">
-      <screen x="1440" y="23" width="1920" height="1053" />
+    <state width="1877" height="330" key="GridCell.Tab.1.bottom" timestamp="1608725431993">
+      <screen x="0" y="0" width="1920" height="1160" />
     </state>
+    <state width="1877" height="330" key="GridCell.Tab.1.bottom/0.0.1920.1160/1920.145.1680.1010@0.0.1920.1160" timestamp="1608725431993" />
     <state width="1878" height="356" key="GridCell.Tab.1.bottom/1440.23.1920.1053/0.23.1440.877@1440.23.1920.1053" timestamp="1604573785522" />
-    <state width="1878" height="356" key="GridCell.Tab.1.center" timestamp="1604573785521">
-      <screen x="1440" y="23" width="1920" height="1053" />
+    <state width="1877" height="330" key="GridCell.Tab.1.center" timestamp="1608725431992">
+      <screen x="0" y="0" width="1920" height="1160" />
     </state>
+    <state width="1877" height="330" key="GridCell.Tab.1.center/0.0.1920.1160/1920.145.1680.1010@0.0.1920.1160" timestamp="1608725431992" />
     <state width="1878" height="356" key="GridCell.Tab.1.center/1440.23.1920.1053/0.23.1440.877@1440.23.1920.1053" timestamp="1604573785521" />
-    <state width="1878" height="356" key="GridCell.Tab.1.left" timestamp="1604573785520">
-      <screen x="1440" y="23" width="1920" height="1053" />
+    <state width="1877" height="330" key="GridCell.Tab.1.left" timestamp="1608725431992">
+      <screen x="0" y="0" width="1920" height="1160" />
     </state>
+    <state width="1877" height="330" key="GridCell.Tab.1.left/0.0.1920.1160/1920.145.1680.1010@0.0.1920.1160" timestamp="1608725431992" />
     <state width="1878" height="356" key="GridCell.Tab.1.left/1440.23.1920.1053/0.23.1440.877@1440.23.1920.1053" timestamp="1604573785520" />
-    <state width="1878" height="356" key="GridCell.Tab.1.right" timestamp="1604573785522">
-      <screen x="1440" y="23" width="1920" height="1053" />
+    <state width="1877" height="330" key="GridCell.Tab.1.right" timestamp="1608725431993">
+      <screen x="0" y="0" width="1920" height="1160" />
     </state>
+    <state width="1877" height="330" key="GridCell.Tab.1.right/0.0.1920.1160/1920.145.1680.1010@0.0.1920.1160" timestamp="1608725431993" />
     <state width="1878" height="356" key="GridCell.Tab.1.right/1440.23.1920.1053/0.23.1440.877@1440.23.1920.1053" timestamp="1604573785522" />
-    <state x="625" y="162" key="SettingsEditor" timestamp="1608666178308">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="469" y="181" key="SettingsEditor" timestamp="1608729149535">
+      <screen x="0" y="0" width="1920" height="1160" />
     </state>
+    <state x="469" y="181" key="SettingsEditor/0.0.1920.1160/1920.145.1680.1010@0.0.1920.1160" timestamp="1608729149535" />
     <state x="625" y="162" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1608666178308" />
     <state x="1909" y="188" key="SettingsEditor/1440.23.1920.1057/0.23.1440.873@1440.23.1920.1057" timestamp="1604566801549" />
     <state x="1097" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608662225085">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1097" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1040@0.0.2560.1040" timestamp="1608662225085" />
+    <state x="2142" y="262" key="new project wizard" timestamp="1608734728364">
+      <screen x="1920" y="145" width="1680" height="1010" />
+    </state>
+    <state x="2142" y="262" key="new project wizard/0.0.1920.1160/1920.145.1680.1010@1920.145.1680.1010" timestamp="1608734728364" />
     <state x="2065" y="255" width="670" height="675" key="run.anything.popup" timestamp="1604567069727">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
