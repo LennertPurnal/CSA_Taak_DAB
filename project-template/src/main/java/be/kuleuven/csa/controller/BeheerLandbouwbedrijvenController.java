@@ -1,15 +1,16 @@
 package be.kuleuven.csa.controller;
 
+import be.kuleuven.csa.model.databaseConn.CsaDatabaseConn;
+import be.kuleuven.csa.model.domain.Landbouwbedrijf;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Stage;
 
-import java.util.ArrayList;
-
-public class BeheerBoerderijenController {
+public class BeheerLandbouwbedrijvenController {
 
     @FXML
     private Button btnDelete;
@@ -20,7 +21,7 @@ public class BeheerBoerderijenController {
     @FXML
     private Button btnClose;
     @FXML
-    private TableView tblBoerderijen;
+    private TableView tblLandbouwbedrijven;
 
     public void initialize() {
         initTable();
@@ -38,24 +39,34 @@ public class BeheerBoerderijenController {
             var stage = (Stage) btnClose.getScene().getWindow();
             stage.close();
         });
+
     }
 
     private void initTable() {
-        tblBoerderijen.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
-        tblBoerderijen.getColumns().clear();
+        tblLandbouwbedrijven.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+        tblLandbouwbedrijven.getColumns().clear();
+        tblLandbouwbedrijven.setEditable(true);
+
+
 
         // TODO verwijderen en "echte data" toevoegen!
         int colIndex = 0;
-        for(var colName : new String[]{"Naam", "Voornaam", "Oppervlakte", "Aantal varkens"}) {
+        for(var colName : new String[]{"Naam", "gemeente", "postcode", "ondernemingsnummer", "land"}) {
             TableColumn<ObservableList<String>, String> col = new TableColumn<>(colName);
             final int finalColIndex = colIndex;
             col.setCellValueFactory(f -> new ReadOnlyObjectWrapper<>(f.getValue().get(finalColIndex)));
-            tblBoerderijen.getColumns().add(col);
+            tblLandbouwbedrijven.getColumns().add(col);
+            col.setCellFactory(TextFieldTableCell.forTableColumn());
             colIndex++;
         }
 
-        for(int i = 0; i < 10; i++) {
-            tblBoerderijen.getItems().add(FXCollections.observableArrayList("Boer " + i, "Jozef V" + i, i*10 + "", i * 33 + ""));
+        for (Landbouwbedrijf bedrijf: CsaDatabaseConn.getDatabaseConn().getCsaRepo().getLandbouwbedrijven()) {
+            tblLandbouwbedrijven.getItems().add(FXCollections.observableArrayList(
+                    bedrijf.getNaam(),
+                    bedrijf.getGemeente(),
+                    String.valueOf(bedrijf.getPostcode()),
+                    String.valueOf(bedrijf.getOndernemingsNR()),
+                    bedrijf.getLand()));
         }
     }
 
@@ -66,6 +77,7 @@ public class BeheerBoerderijenController {
     }
 
     private void modifyCurrentRow() {
+
     }
 
     public void showAlert(String title, String content) {
@@ -77,8 +89,8 @@ public class BeheerBoerderijenController {
     }
 
     private void verifyOneRowSelected() {
-        if(tblBoerderijen.getSelectionModel().getSelectedCells().size() == 0) {
-            showAlert("Hela!", "Eerst een boer selecteren hé.");
+        if(tblLandbouwbedrijven.getSelectionModel().getSelectedCells().size() == 0) {
+            showAlert("Hela!", "Eerst een bedrijf selecteren hé.");
         }
     }
 }

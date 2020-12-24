@@ -24,7 +24,7 @@ public class ProjectMainController {
     private Button btnProducten;
 
     public void initialize() {
-        btnBoerderijen.setOnAction(e -> showBeheerScherm("boerderijen"));
+        btnBoerderijen.setOnAction(e -> showBeheerScherm("landbouwbedrijven"));
         btnTips.setOnAction(e -> showBeheerScherm("tips"));
         btnKlanten.setOnAction(e -> showBeheerScherm("klanten"));
         btnInschrijvingen.setOnAction(e -> showBeheerScherm("inschrijvingen"));

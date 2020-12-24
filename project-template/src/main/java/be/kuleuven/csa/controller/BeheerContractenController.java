@@ -1,6 +1,6 @@
 package be.kuleuven.csa.controller;
 
-public class BeheerInschrijvingenController {
+public class BeheerContractenController {
 
     public void initialize() {
 

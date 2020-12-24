@@ -36,4 +36,8 @@ public class CsaDatabaseConn {
     public static CsaDatabaseConn getDatabaseConn() {
         return databaseConn;
     }
+
+    public CsaDatabaseRepo getCsaRepo() {
+        return csaRepo;
+    }
 }

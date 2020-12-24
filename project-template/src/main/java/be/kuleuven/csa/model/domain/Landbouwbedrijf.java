@@ -20,6 +20,8 @@ public class Landbouwbedrijf implements CsaEntity{
     @OneToMany(mappedBy = "landbouwbedrijf")
     private List<Aanbieding> aanbiedingen = new ArrayList<>();
 
+    public Landbouwbedrijf() {} //default constructor
+
     public Landbouwbedrijf(int ondernemingsNR, String naam, String gemeente, int postcode) {
         this.ondernemingsNR = ondernemingsNR;
         this.naam = naam;
@@ -31,4 +33,43 @@ public class Landbouwbedrijf implements CsaEntity{
         aanbiedingen.add(aanbieding);
     }
 
+    public int getOndernemingsNR() {
+        return ondernemingsNR;
+    }
+
+    public void setOndernemingsNR(int ondernemingsNR) {
+        this.ondernemingsNR = ondernemingsNR;
+    }
+
+    public String getNaam() {
+        return naam;
+    }
+
+    public void setNaam(String naam) {
+        this.naam = naam;
+    }
+
+    public String getLand() {
+        return land;
+    }
+
+    public void setLand(String land) {
+        this.land = land;
+    }
+
+    public String getGemeente() {
+        return gemeente;
+    }
+
+    public void setGemeente(String gemeente) {
+        this.gemeente = gemeente;
+    }
+
+    public int getPostcode() {
+        return postcode;
+    }
+
+    public void setPostcode(int postcode) {
+        this.postcode = postcode;
+    }
 }
