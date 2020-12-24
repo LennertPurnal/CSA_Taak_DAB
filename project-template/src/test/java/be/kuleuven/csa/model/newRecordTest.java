@@ -56,8 +56,7 @@ public class newRecordTest {
         databaseRepo.saveNewRecord(pakket);
 
 
-        Aanbieding aanbieding = new Aanbieding(pakket, landbouwbedrijf, 100)
-                ;
+        Aanbieding aanbieding = new Aanbieding(pakket, landbouwbedrijf, 100);
         pakket.voegAanbiedingToe(aanbieding);
         landbouwbedrijf.voegAanbiedingToe(aanbieding);
         databaseRepo.saveNewRecord(aanbieding);

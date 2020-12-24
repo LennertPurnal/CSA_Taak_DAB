@@ -16,19 +16,19 @@ public class ProjectMain extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-       /* rootStage = stage;
+        rootStage = stage;
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("csamain.fxml"));
 
         Scene scene = new Scene(root);
 
         stage.setTitle("CSA Administratie hoofdscherm");
         stage.setScene(scene);
-        stage.show(); */
+        stage.show();
     }
 
     public static void main(String[] args) {
-        //database connection setup gebeurt in projectmaincontroller.initialize
-       // launch();
-        //CsaDatabaseConn.getDatabaseConn().tearDown();
+       // database connection setup gebeurt in projectmaincontroller.initialize
+        launch();
+        CsaDatabaseConn.getDatabaseConn().tearDown();
     }
 }
