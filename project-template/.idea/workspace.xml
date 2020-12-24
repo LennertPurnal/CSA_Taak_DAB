@@ -29,28 +29,18 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.3/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSAdatabase.db" beforeDir="false" afterPath="$PROJECT_DIR$/CSAdatabase.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/controller/BeheerBoerderijenController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/controller/BeheerInschrijvingenController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/controller/ProjectMainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/controller/ProjectMainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/model/databaseConn/CsaDatabaseConn.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/model/databaseConn/CsaDatabaseConn.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/model/databaseConn/CsaDatabaseRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/model/databaseConn/CsaDatabaseRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/model/domain/Landbouwbedrijf.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/model/domain/Landbouwbedrijf.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/beheerboerderijen.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/beheerinschrijvingen.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/csamain.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/csamain.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/kuleuven/csa/controller/BeheerBoerderijenController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/kuleuven/csa/controller/BeheerInschrijvingenController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/kuleuven/csa/controller/ProjectMainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/kuleuven/csa/controller/ProjectMainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/kuleuven/csa/model/databaseConn/CsaDatabaseConn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/kuleuven/csa/model/databaseConn/CsaDatabaseConn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/kuleuven/csa/model/databaseConn/CsaDatabaseRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/kuleuven/csa/model/databaseConn/CsaDatabaseRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/kuleuven/csa/model/domain/Landbouwbedrijf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/kuleuven/csa/model/domain/Landbouwbedrijf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/beheerboerderijen.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/beheerinschrijvingen.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/csamain.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/csamain.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/be/kuleuven/csa/model/newRecordTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/be/kuleuven/csa/model/newRecordTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/controller/BeheerLandbouwbedrijvenController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/be/kuleuven/csa/controller/BeheerLandbouwbedrijvenController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/kuleuven/csa/controller/BeheerLandbouwbedrijvenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/kuleuven/csa/controller/BeheerLandbouwbedrijvenController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,13 +121,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="C:/Program Files/javafx-sdk-11.0.2/bin" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -166,63 +156,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="newRecordTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;be.kuleuven.csa.model.newRecordTest&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="newRecordTest.saveNewKlantTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;be.kuleuven.csa.model.newRecordTest.saveNewKlantTest&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="newRecordTest.saveNewLandbouwbedrijfTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;be.kuleuven.csa.model.newRecordTest.saveNewLandbouwbedrijfTest&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="newRecordTest.savenewAanbiedingTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -242,17 +175,79 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="project-template [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="dependencies" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="project-template [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="jar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="project-template" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" value="run" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.ProjectMain" />
+      <item itemvalue="Gradle.newRecordTest.savenewAanbiedingTest" />
+      <item itemvalue="Gradle.project-template" />
+      <item itemvalue="Gradle.project-template [dependencies]" />
+      <item itemvalue="Gradle.project-template [jar]" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.project-template" />
+        <item itemvalue="Gradle.project-template [dependencies]" />
+        <item itemvalue="Gradle.project-template [jar]" />
         <item itemvalue="Application.ProjectMain" />
         <item itemvalue="Gradle.newRecordTest.savenewAanbiedingTest" />
-        <item itemvalue="Gradle.newRecordTest.saveNewKlantTest" />
-        <item itemvalue="Gradle.newRecordTest.saveNewLandbouwbedrijfTest" />
-        <item itemvalue="Gradle.newRecordTest" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -275,12 +270,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
@@ -288,6 +284,10 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608816619611">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1608816619611" />
     <state x="809" y="332" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608662473753">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
@@ -301,31 +301,36 @@
       <screen x="1440" y="23" width="1920" height="1053" />
     </state>
     <state x="2273" y="263" width="729" height="573" key="#xdebugger.evaluate/1440.23.1920.1053/0.23.1440.877@1440.23.1920.1053" timestamp="1604572497531" />
-    <state x="904" y="258" key="FileChooserDialogImpl" timestamp="1608721562254">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="542" y="204" key="FileChooserDialogImpl" timestamp="1608815309699">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="542" y="204" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1608815309699" />
     <state x="904" y="258" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1608721562254" />
-    <state width="2517" height="209" key="GridCell.Tab.0.bottom" timestamp="1608760518872">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1608822527266">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608822527266" />
     <state width="2517" height="209" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1608760518872" />
     <state width="1878" height="356" key="GridCell.Tab.0.bottom/1440.23.1920.1053/0.23.1440.877@1440.23.1920.1053" timestamp="1604573785520" />
     <state width="1878" height="288" key="GridCell.Tab.0.bottom/1440.23.1920.1057/0.23.1440.873@1440.23.1920.1057" timestamp="1604567232654" />
-    <state width="2517" height="209" key="GridCell.Tab.0.center" timestamp="1608760518871">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1608822527266">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1608822527266" />
     <state width="2517" height="209" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1608760518871" />
     <state width="1878" height="356" key="GridCell.Tab.0.center/1440.23.1920.1053/0.23.1440.877@1440.23.1920.1053" timestamp="1604573785518" />
     <state width="1878" height="288" key="GridCell.Tab.0.center/1440.23.1920.1057/0.23.1440.873@1440.23.1920.1057" timestamp="1604567232653" />
-    <state width="2517" height="209" key="GridCell.Tab.0.left" timestamp="1608760518871">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1608822527266">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1608822527266" />
     <state width="2517" height="209" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1608760518871" />
     <state width="1878" height="356" key="GridCell.Tab.0.left/1440.23.1920.1053/0.23.1440.877@1440.23.1920.1053" timestamp="1604573785517" />
     <state width="1878" height="288" key="GridCell.Tab.0.left/1440.23.1920.1057/0.23.1440.873@1440.23.1920.1057" timestamp="1604567232653" />
-    <state width="2517" height="209" key="GridCell.Tab.0.right" timestamp="1608760518872">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1608822527266">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1608822527266" />
     <state width="2517" height="209" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1608760518872" />
     <state width="1878" height="356" key="GridCell.Tab.0.right/1440.23.1920.1053/0.23.1440.877@1440.23.1920.1053" timestamp="1604573785519" />
     <state width="1878" height="288" key="GridCell.Tab.0.right/1440.23.1920.1057/0.23.1440.873@1440.23.1920.1057" timestamp="1604567232654" />
@@ -345,15 +350,28 @@
       <screen x="1440" y="23" width="1920" height="1053" />
     </state>
     <state width="1878" height="356" key="GridCell.Tab.1.right/1440.23.1920.1053/0.23.1440.877@1440.23.1920.1053" timestamp="1604573785522" />
-    <state x="625" y="162" key="SettingsEditor" timestamp="1608725073471">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="565" y="111" key="NewModule_or_Project.wizard" timestamp="1608815162307">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="565" y="111" key="NewModule_or_Project.wizard/0.0.1536.824@0.0.1536.824" timestamp="1608815162307" />
+    <state x="375" y="0" key="SettingsEditor" timestamp="1608815761906">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="375" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1608815761906" />
     <state x="625" y="162" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1608725073471" />
     <state x="1909" y="188" key="SettingsEditor/1440.23.1920.1057/0.23.1440.873@1440.23.1920.1057" timestamp="1604566801549" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1608810158999">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1608810158999" />
     <state x="1097" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608752221229">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1097" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1040@0.0.2560.1040" timestamp="1608752221229" />
+    <state x="335" y="24" key="new project wizard" timestamp="1608815150591">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="335" y="24" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1608815150591" />
     <state x="2065" y="255" width="670" height="675" key="run.anything.popup" timestamp="1604567069727">
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
