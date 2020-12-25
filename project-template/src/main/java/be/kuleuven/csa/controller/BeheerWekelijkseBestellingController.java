@@ -1,17 +1,26 @@
 package be.kuleuven.csa.controller;
 
+import be.kuleuven.csa.model.domain.Landbouwbedrijf;
+import be.kuleuven.csa.model.domain.Product;
+import be.kuleuven.csa.model.domain.WekelijkseBestelling;
+import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.SelectionMode;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import org.lightcouch.CouchDbClient;
 import org.lightcouch.Response;
 
+import javax.persistence.Table;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Array;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+
+import static javafx.application.ConditionalFeature.SWT;
 
 public class BeheerWekelijkseBestellingController {
 
@@ -24,7 +33,19 @@ public class BeheerWekelijkseBestellingController {
     @FXML
     private Button btnClose;
     @FXML
-    private TableView tblWeekelijkseBestellingen;
+    private TableView<WekelijkseBestelling> tblWeekelijkseBestellingen;
+    @FXML
+    public TableColumn<WekelijkseBestelling, String> BestelNR = new TableColumn<>("BestelNR");
+    @FXML
+    public TableColumn<WekelijkseBestelling, Integer> klantID = new TableColumn<>("klantID");
+    @FXML
+    public TableColumn<WekelijkseBestelling, Product[]> Producten = new TableColumn<>("Producten");
+    @FXML
+    public TableColumn<WekelijkseBestelling, String> Product = new TableColumn<>("product");
+    @FXML
+    public TableColumn<WekelijkseBestelling, Integer> Aantal = new TableColumn<>("Aantal");
+    @FXML
+    public TableColumn<WekelijkseBestelling, Boolean> Afgehaald = new TableColumn<>("Afgehaald");
 
     public void initialize() {
         initTable();
@@ -51,6 +72,14 @@ public class BeheerWekelijkseBestellingController {
         tblWeekelijkseBestellingen.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         tblWeekelijkseBestellingen.setEditable(true);
 
+
+        BestelNR.setCellValueFactory(new PropertyValueFactory<>("BestelNR"));
+        klantID.setCellValueFactory((new PropertyValueFactory<>("klantID")));
+        Producten.setCellValueFactory(new PropertyValueFactory<>("Producten"));
+        Product.setCellValueFactory(new PropertyValueFactory<>("Product"));
+        Aantal.setCellValueFactory(new PropertyValueFactory<>("Aantal"));
+        Afgehaald.setCellValueFactory((new PropertyValueFactory<>("Afgehaald")));
+
         // TODO verwijderen en "echte data" toevoegen!
         CouchDbClient dbClient = new CouchDbClient();
 
@@ -63,6 +92,17 @@ public class BeheerWekelijkseBestellingController {
         System.out.println("\n \n \n");
         System.out.println(" --------------------------------------------------------------------------------");
 
+
+        Gson gson = new Gson();
+        WekelijkseBestelling b = gson.fromJson(json, WekelijkseBestelling.class);
+
+        System.out.println(b);
+
+        tblWeekelijkseBestellingen.getItems().add(b);
+
+
+        tblWeekelijkseBestellingen.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        tblWeekelijkseBestellingen.getColumns().addAll(BestelNR,  klantID, Producten ,  Product,  Aantal, Afgehaald);
         // shutdown the client
         dbClient.shutdown();
 

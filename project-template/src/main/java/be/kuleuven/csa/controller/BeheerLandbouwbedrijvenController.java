@@ -54,13 +54,11 @@ public class BeheerLandbouwbedrijvenController {
         tblLandbouwbedrijven.getColumns().clear();
         tblLandbouwbedrijven.setEditable(true);
 
-
         bedrijfsNaam.setCellValueFactory(new PropertyValueFactory<>("naam"));
         bedrijfsGemeente.setCellValueFactory((new PropertyValueFactory<>("Gemeente")));
         bedrijfsPostcode.setCellValueFactory(new PropertyValueFactory<>("postcode"));
         bedrijfsOndernemingsNR.setCellValueFactory(new PropertyValueFactory<>("ondernemingsNR"));
         bedrijfsLand.setCellValueFactory(new PropertyValueFactory<>("land"));
-
 
 
         /*
