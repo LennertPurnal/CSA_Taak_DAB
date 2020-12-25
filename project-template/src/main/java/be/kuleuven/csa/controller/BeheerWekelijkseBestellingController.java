@@ -54,7 +54,7 @@ public class BeheerWekelijkseBestellingController {
         // TODO verwijderen en "echte data" toevoegen!
         CouchDbClient dbClient = new CouchDbClient();
 
-        JsonObject json =  dbClient.find(JsonObject.class,"062cb2f1582a6a4257bf58b93f002f01");
+        JsonObject json =  dbClient.find(JsonObject.class,"fb17bd06530cd5b0f5730113e401ba4a");
 
         System.out.println(" --------------------------------------------------------------------------------");
         System.out.println(" -------------------------------- TEST ------------------------------------------\n");
