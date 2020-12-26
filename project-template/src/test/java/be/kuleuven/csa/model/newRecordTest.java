@@ -35,7 +35,7 @@ public class newRecordTest {
     @Test
     public void saveNewKlantTest(){
         Klant klant = new Klant("testklant", "stadofdorp", 666, "straat", 21, "België");
-        databaseRepo.saveNewRecord(klant);
+        databaseRepo.persistRecord(klant);
 
         Assert.assertTrue("klant heeft id gekregen", klant.getKlantID() > 0);
         entityManager.clear();
@@ -44,7 +44,7 @@ public class newRecordTest {
     @Test
     public void saveNewLandbouwbedrijfTest(){
         Landbouwbedrijf landbouwbedrijf = new Landbouwbedrijf(111111, "testbedrijf", "stadofdorp", 666);
-        databaseRepo.saveNewRecord(landbouwbedrijf);
+        databaseRepo.persistRecord(landbouwbedrijf);
         entityManager.clear();
     }
 
@@ -52,14 +52,14 @@ public class newRecordTest {
     public void savenewAanbiedingTest(){
         Pakket pakket = new Pakket("medium", 2, 2, "korte beschrijving");
         Landbouwbedrijf landbouwbedrijf = new Landbouwbedrijf(1, "testbedrijf", "stadofdorp", 666);
-        databaseRepo.saveNewRecord(landbouwbedrijf);
-        databaseRepo.saveNewRecord(pakket);
+        databaseRepo.persistRecord(landbouwbedrijf);
+        databaseRepo.persistRecord(pakket);
 
 
         Aanbieding aanbieding = new Aanbieding(pakket, landbouwbedrijf, 100);
         pakket.voegAanbiedingToe(aanbieding);
         landbouwbedrijf.voegAanbiedingToe(aanbieding);
-        databaseRepo.saveNewRecord(aanbieding);
+        databaseRepo.persistRecord(aanbieding);
         entityManager.clear();
     }
 }

@@ -2,10 +2,14 @@ package be.kuleuven.csa.controller;
 
 import be.kuleuven.csa.model.databaseConn.CsaDatabaseConn;
 import be.kuleuven.csa.model.domain.Landbouwbedrijf;
+import com.sun.javafx.scene.control.IntegerField;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.control.cell.TextFieldTreeTableCell;
 import javafx.stage.Stage;
+import javafx.util.converter.IntegerStringConverter;
 
 public class BeheerLandbouwbedrijvenController {
 
@@ -26,7 +30,7 @@ public class BeheerLandbouwbedrijvenController {
     @FXML
     public TableColumn<Landbouwbedrijf, Integer> bedrijfsPostcode = new TableColumn<>("Postcode");
     @FXML
-    public TableColumn<Landbouwbedrijf, String> bedrijfsOndernemingsNR = new TableColumn<>("OndernemingsNR");
+    public TableColumn<Landbouwbedrijf, Integer> bedrijfsOndernemingsNR = new TableColumn<>("OndernemingsNR");
     @FXML
     public TableColumn<Landbouwbedrijf, String> bedrijfsLand = new TableColumn<>("Land");
 
@@ -55,24 +59,39 @@ public class BeheerLandbouwbedrijvenController {
         tblLandbouwbedrijven.setEditable(true);
 
         bedrijfsNaam.setCellValueFactory(new PropertyValueFactory<>("naam"));
+        bedrijfsNaam.setCellFactory(TextFieldTableCell.forTableColumn());
+        bedrijfsNaam.setOnEditCommit(event -> {
+            Landbouwbedrijf selectedBedrijf = event.getRowValue();
+            selectedBedrijf.setNaam(event.getNewValue());
+        });
+
         bedrijfsGemeente.setCellValueFactory((new PropertyValueFactory<>("Gemeente")));
+        bedrijfsGemeente.setCellFactory(TextFieldTableCell.forTableColumn());
+        bedrijfsGemeente.setOnEditCommit(event -> {
+            Landbouwbedrijf selectedBedrijf = event.getRowValue();
+            selectedBedrijf.setGemeente(event.getNewValue());
+        });
+
         bedrijfsPostcode.setCellValueFactory(new PropertyValueFactory<>("postcode"));
+        bedrijfsPostcode.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+        bedrijfsPostcode.setOnEditCommit(event -> {
+            Landbouwbedrijf selectedBedrijf = event.getRowValue();
+            selectedBedrijf.setPostcode(Integer.valueOf(event.getNewValue()));
+        });
+
         bedrijfsOndernemingsNR.setCellValueFactory(new PropertyValueFactory<>("ondernemingsNR"));
+        bedrijfsOndernemingsNR.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+        bedrijfsOndernemingsNR.setOnEditCommit(event -> {
+            Landbouwbedrijf selectedBedrijf = event.getRowValue();
+            selectedBedrijf.setOndernemingsNR(Integer.valueOf(event.getNewValue()));
+        });
+
         bedrijfsLand.setCellValueFactory(new PropertyValueFactory<>("land"));
-
-
-        /*
-        // TODO verwijderen en "echte data" toevoegen!
-        int colIndex = 0;
-        for(var colName : new String[]{"Naam", "gemeente", "postcode", "ondernemingsnummer", "land"}) {
-            TableColumn<ObservableList<String>, String> col = new TableColumn<>(colName);
-            final int finalColIndex = colIndex;
-            col.setCellValueFactory(f -> new ReadOnlyObjectWrapper<>(f.getValue().get(finalColIndex)));
-            tblLandbouwbedrijven.getColumns().add(col);
-            col.setCellFactory(TextFieldTableCell.forTableColumn());
-            colIndex++;
-        }
-        */
+        bedrijfsLand.setCellFactory(TextFieldTableCell.forTableColumn());
+        bedrijfsLand.setOnEditCommit(event -> {
+            Landbouwbedrijf selectedBedrijf = event.getRowValue();
+            selectedBedrijf.setLand(event.getNewValue());
+        });
 
         for (Landbouwbedrijf bedrijf: CsaDatabaseConn.getDatabaseConn().getCsaRepo().getLandbouwbedrijven()) {
             tblLandbouwbedrijven.getItems().add(bedrijf);
@@ -89,7 +108,8 @@ public class BeheerLandbouwbedrijvenController {
     }
 
     private void modifyCurrentRow() {
-
+        Landbouwbedrijf selectedBedrijf = tblLandbouwbedrijven.getSelectionModel().getSelectedItem();
+        CsaDatabaseConn.getDatabaseConn().getCsaRepo().persistRecord(selectedBedrijf);
     }
 
     public void showAlert(String title, String content) {
@@ -105,4 +125,6 @@ public class BeheerLandbouwbedrijvenController {
             showAlert("Hela!", "Eerst een bedrijf selecteren hé.");
         }
     }
+
+
 }

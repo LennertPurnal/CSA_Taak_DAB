@@ -13,7 +13,7 @@ public class CsaDatabaseRepo {
         this.entityManager = entityManager;
     }
 
-    public void saveNewRecord(CsaEntity record){
+    public void persistRecord(CsaEntity record){
         entityManager.getTransaction().begin();
         entityManager.persist(record);
         entityManager.getTransaction().commit();

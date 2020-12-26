@@ -73,12 +73,12 @@ public class BeheerWekelijkseBestellingController {
         tblWeekelijkseBestellingen.setEditable(true);
 
 
-        BestelNR.setCellValueFactory(new PropertyValueFactory<>("BestelNR"));
+        BestelNR.setCellValueFactory(new PropertyValueFactory<>("bestelNR"));
         klantID.setCellValueFactory((new PropertyValueFactory<>("klantID")));
-        Producten.setCellValueFactory(new PropertyValueFactory<>("Producten"));
-        Product.setCellValueFactory(new PropertyValueFactory<>("Product"));
-        Aantal.setCellValueFactory(new PropertyValueFactory<>("Aantal"));
-        Afgehaald.setCellValueFactory((new PropertyValueFactory<>("Afgehaald")));
+        //Producten.setCellValueFactory(new PropertyValueFactory<>("producten"));
+        Product.setCellValueFactory(new PropertyValueFactory<>("product"));
+        Aantal.setCellValueFactory(new PropertyValueFactory<>("aantal"));
+        Afgehaald.setCellValueFactory((new PropertyValueFactory<>("afgehaald")));
 
         // TODO verwijderen en "echte data" toevoegen!
         CouchDbClient dbClient = new CouchDbClient();

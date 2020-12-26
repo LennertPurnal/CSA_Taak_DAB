@@ -11,7 +11,6 @@
         <class>be.kuleuven.csa.model.domain.Klant</class>
         <class>be.kuleuven.csa.model.domain.Landbouwbedrijf</class>
         <class>be.kuleuven.csa.model.domain.Pakket</class>
-        <class>be.kuleuven.csa.model.domain.AanbiedingID</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.sqlite.JDBC"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:sqlite:CSAdatabase.db"/>

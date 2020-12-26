@@ -37,7 +37,7 @@ public class ProjectMainController {
     }
 
     private void showBeheerScherm(String id) {
-        var resourceName = "beheer" + id + ".fxml";
+        var resourceName = "beheerschermen/beheer" + id + ".fxml";
         try {
             var stage = new Stage();
             var root = (AnchorPane) FXMLLoader.load(getClass().getClassLoader().getResource(resourceName));
