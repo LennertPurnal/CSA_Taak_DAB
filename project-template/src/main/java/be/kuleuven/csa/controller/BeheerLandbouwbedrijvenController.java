@@ -2,19 +2,21 @@ package be.kuleuven.csa.controller;
 
 import be.kuleuven.csa.model.databaseConn.CsaDatabaseConn;
 import be.kuleuven.csa.model.domain.Landbouwbedrijf;
-import com.sun.javafx.scene.control.IntegerField;
+import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
-import javafx.scene.control.cell.TextFieldTreeTableCell;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.util.converter.IntegerStringConverter;
-import org.w3c.dom.Text;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class BeheerLandbouwbedrijvenController {
 
@@ -114,11 +116,17 @@ public class BeheerLandbouwbedrijvenController {
     }
 
     private void deleteCurrentRow() {
+        Landbouwbedrijf selectedRow = tblLandbouwbedrijven.getSelectionModel().getSelectedItem();
+        var entitymanager = CsaDatabaseConn.getDatabaseConn().getEntityManager();
+        entitymanager.getTransaction().begin();
+        entitymanager.remove(selectedRow);
+        CsaDatabaseConn.getDatabaseConn().getCsaRepo().flushAndClear();
+        entitymanager.getTransaction().commit();
     }
 
     private void modifyCurrentRow() {
         Landbouwbedrijf selectedBedrijf = tblLandbouwbedrijven.getSelectionModel().getSelectedItem();
-        CsaDatabaseConn.getDatabaseConn().getCsaRepo().persistRecord(selectedBedrijf);
+        CsaDatabaseConn.getDatabaseConn().getCsaRepo().updateRecord(selectedBedrijf);
     }
 
     public void showAlert(String title, String content) {
@@ -171,6 +179,24 @@ public class BeheerLandbouwbedrijvenController {
         grid.add(landtext, 1, 4);
         dialog.getDialogPane().setContent(grid);
 
+        Node voegtoeButton = dialog.getDialogPane().lookupButton(voegToeButtonType);
+        voegtoeButton.setDisable(true);
+
+        List<TextField> textfields = new ArrayList<>();
+        textfields.add(naamtext);
+        textfields.add(gemeentetext);
+        textfields.add(postcodetext);
+        textfields.add(ondernemingsNRtext);
+
+        for (TextField t : textfields){
+            t.textProperty().addListener((observable, oldValue, newValue) -> {
+                if (!naamtext.getText().isEmpty() && !gemeentetext.getText().isEmpty() && !ondernemingsNRtext.getText().isEmpty() && !postcodetext.getText().isEmpty()){
+                    voegtoeButton.setDisable(false);
+                } else {
+                    voegtoeButton.setDisable(true);
+                }
+            });
+        }
         dialog.setResultConverter(dialogButton -> {
             if (dialogButton == voegToeButtonType){
                 Landbouwbedrijf newbedrijf = new Landbouwbedrijf(
@@ -185,10 +211,9 @@ public class BeheerLandbouwbedrijvenController {
             return null;
         });
 
-
-
         Optional<Landbouwbedrijf> bedrijfToeTeVoegen = dialog.showAndWait();
         return bedrijfToeTeVoegen;
     }
+
 
 }

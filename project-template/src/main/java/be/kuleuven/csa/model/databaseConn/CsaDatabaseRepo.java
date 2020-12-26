@@ -16,6 +16,14 @@ public class CsaDatabaseRepo {
     public void persistRecord(CsaEntity record){
         entityManager.getTransaction().begin();
         entityManager.persist(record);
+        flushAndClear();
+        entityManager.getTransaction().commit();
+    }
+
+    public void updateRecord(CsaEntity record){
+        entityManager.getTransaction().begin();
+        entityManager.merge(record);
+        flushAndClear();
         entityManager.getTransaction().commit();
     }
 
@@ -27,5 +35,10 @@ public class CsaDatabaseRepo {
 
         var alleboerderijen = entityManager.createQuery(all).setMaxResults(10);
         return alleboerderijen.getResultList();
+    }
+
+    public void flushAndClear(){
+        entityManager.flush();
+        entityManager.clear();
     }
 }
