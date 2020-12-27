@@ -19,5 +19,6 @@
       <Button fx:id="btnAdd" layoutX="16.0" layoutY="304.0" mnemonicParsing="false" text="Voeg Toe" />
       <Button fx:id="btnClose" layoutX="520.0" layoutY="304.0" mnemonicParsing="false" text="Sluiten" />
       <Button fx:id="btnDelete" layoutX="431.0" layoutY="304.0" mnemonicParsing="false" text="Verwijder" />
+      <Button fx:id="btnFilter" layoutX="517.0" layoutY="10.0" mnemonicParsing="false" text="Filter" />
    </children>
 </AnchorPane>
