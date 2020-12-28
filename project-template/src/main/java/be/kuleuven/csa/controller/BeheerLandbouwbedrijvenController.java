@@ -2,7 +2,6 @@ package be.kuleuven.csa.controller;
 
 import be.kuleuven.csa.model.databaseConn.CsaDatabaseConn;
 import be.kuleuven.csa.model.domain.Landbouwbedrijf;
-import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
@@ -16,16 +15,17 @@ import javafx.util.converter.IntegerStringConverter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class BeheerLandbouwbedrijvenController {
 
     @FXML
-    private Button btnDelete;
+    private Button btnDeleteBedrijf;
     @FXML
-    private Button btnAdd;
+    private Button btnAddBedrijf;
     @FXML
-    private Button btnClose;
+    private Button btnCloseBedrijfscherm;
+    @FXML
+    private Button btnFilterBedrijven;
     @FXML
     private TableView<Landbouwbedrijf> tblLandbouwbedrijven;
     @FXML
@@ -39,20 +39,26 @@ public class BeheerLandbouwbedrijvenController {
     @FXML
     public TableColumn<Landbouwbedrijf, String> bedrijfsLand = new TableColumn<>("Land");
 
+    private Landbouwbedrijf filterBedrijf;
+
     public void initialize() {
         initTable();
-        btnAdd.setOnAction(e -> addNewRow());
 
-        btnDelete.setOnAction(e -> {
+        btnAddBedrijf.setOnAction(e -> addNewRow());
+
+        btnDeleteBedrijf.setOnAction(e -> {
             verifyOneRowSelected();
             deleteCurrentRow();
         });
 
-        btnClose.setOnAction(e -> {
-            var stage = (Stage) btnClose.getScene().getWindow();
+        btnCloseBedrijfscherm.setOnAction(e -> {
+            var stage = (Stage) btnCloseBedrijfscherm.getScene().getWindow();
             stage.close();
         });
 
+        btnFilterBedrijven.setOnAction(e -> {
+            filterBedrijven();
+        });
     }
 
     private void initTable() {
@@ -68,7 +74,7 @@ public class BeheerLandbouwbedrijvenController {
             modifyCurrentRow();
         });
 
-        bedrijfsGemeente.setCellValueFactory((new PropertyValueFactory<>("Gemeente")));
+        bedrijfsGemeente.setCellValueFactory((new PropertyValueFactory<>("gemeente")));
         bedrijfsGemeente.setCellFactory(TextFieldTableCell.forTableColumn());
         bedrijfsGemeente.setOnEditCommit(event -> {
             Landbouwbedrijf selectedBedrijf = event.getRowValue();
@@ -100,19 +106,18 @@ public class BeheerLandbouwbedrijvenController {
             modifyCurrentRow();
         });
 
-        for (Landbouwbedrijf bedrijf: CsaDatabaseConn.getDatabaseConn().getCsaRepo().getLandbouwbedrijven()) {
-            tblLandbouwbedrijven.getItems().add(bedrijf);
-        }
+        filterBedrijf = null;
+        refreshTable();
 
         tblLandbouwbedrijven.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         tblLandbouwbedrijven.getColumns().addAll(bedrijfsNaam, bedrijfsGemeente, bedrijfsPostcode, bedrijfsOndernemingsNR, bedrijfsLand);
     }
 
+
     private void addNewRow() {
         var bedrijfToeTeVoegen = showAddNewRowDialog();
-        if (bedrijfToeTeVoegen.isPresent()){
-            CsaDatabaseConn.getDatabaseConn().getCsaRepo().persistRecord(bedrijfToeTeVoegen.get());
-        }
+        bedrijfToeTeVoegen.ifPresent(landbouwbedrijf -> CsaDatabaseConn.getDatabaseConn().getCsaRepo().persistRecord(landbouwbedrijf));
+        refreshTable();
     }
 
     private void deleteCurrentRow() {
@@ -122,11 +127,20 @@ public class BeheerLandbouwbedrijvenController {
         entitymanager.remove(selectedRow);
         CsaDatabaseConn.getDatabaseConn().getCsaRepo().flushAndClear();
         entitymanager.getTransaction().commit();
+
+        refreshTable();
     }
 
     private void modifyCurrentRow() {
         Landbouwbedrijf selectedBedrijf = tblLandbouwbedrijven.getSelectionModel().getSelectedItem();
         CsaDatabaseConn.getDatabaseConn().getCsaRepo().updateRecord(selectedBedrijf);
+    }
+
+    private void refreshTable(){
+        tblLandbouwbedrijven.getItems().clear();
+        for (Landbouwbedrijf bedrijf: CsaDatabaseConn.getDatabaseConn().getCsaRepo().getLandbouwbedrijven(filterBedrijf)) {
+            tblLandbouwbedrijven.getItems().add(bedrijf);
+        }
     }
 
     public void showAlert(String title, String content) {
@@ -135,6 +149,12 @@ public class BeheerLandbouwbedrijvenController {
         alert.setHeaderText(title);
         alert.setContentText(content);
         alert.showAndWait();
+    }
+
+    private void filterBedrijven(){
+        var optionalFilterbedrijf = showChangeFilterDialog();
+        filterBedrijf = optionalFilterbedrijf.orElse(null);
+        refreshTable();
     }
 
     private void verifyOneRowSelected() {
@@ -190,30 +210,82 @@ public class BeheerLandbouwbedrijvenController {
 
         for (TextField t : textfields){
             t.textProperty().addListener((observable, oldValue, newValue) -> {
-                if (!naamtext.getText().isEmpty() && !gemeentetext.getText().isEmpty() && !ondernemingsNRtext.getText().isEmpty() && !postcodetext.getText().isEmpty()){
-                    voegtoeButton.setDisable(false);
-                } else {
-                    voegtoeButton.setDisable(true);
-                }
+                voegtoeButton.setDisable(naamtext.getText().isEmpty() || gemeentetext.getText().isEmpty() || ondernemingsNRtext.getText().isEmpty() || postcodetext.getText().isEmpty());
             });
         }
         dialog.setResultConverter(dialogButton -> {
             if (dialogButton == voegToeButtonType){
                 Landbouwbedrijf newbedrijf = new Landbouwbedrijf(
-                        Integer.parseInt(ondernemingsNRtext.getText()),
-                        naamtext.getText(),
-                        gemeentetext.getText(),
-                        Integer.parseInt(postcodetext.getText()));
-                newbedrijf.setLand(landtext.getText());
+                        Integer.parseInt(ondernemingsNRtext.getText().trim()),
+                        naamtext.getText().trim(),
+                        gemeentetext.getText().trim(),
+                        Integer.parseInt(postcodetext.getText().trim()));
+                newbedrijf.setLand(landtext.getText().trim());
                 return newbedrijf;
 
             }
             return null;
         });
 
-        Optional<Landbouwbedrijf> bedrijfToeTeVoegen = dialog.showAndWait();
-        return bedrijfToeTeVoegen;
+        return dialog.showAndWait();
+    }
+
+    private Optional<Landbouwbedrijf> showChangeFilterDialog() {
+        Dialog<Landbouwbedrijf> dialog = new Dialog<>();
+        dialog.setTitle("Filter Landbouwbedrijven");
+        dialog.setHeaderText("voeg filters toe voor het zoeken van landbouwbedrijven.");
+
+        ButtonType voegToeButtonType = new ButtonType("Filter", ButtonBar.ButtonData.OK_DONE);
+        dialog.getDialogPane().getButtonTypes().addAll(voegToeButtonType, ButtonType.CANCEL);
+
+        GridPane grid = new GridPane();
+        grid.setHgap(10);
+        grid.setVgap(10);
+        grid.setPadding(new Insets(20, 150, 10, 10));
+
+        TextField naamtext = new TextField();
+        naamtext.setPromptText("Naam");
+        TextField gemeentetext = new TextField();
+        gemeentetext.setPromptText("Gemeente");
+        TextField postcodetext = new TextField();
+        postcodetext.setPromptText("Postcode");
+        TextField ondernemingsNRtext = new TextField();
+        ondernemingsNRtext.setPromptText("Ondernemingsnummer");
+        TextField landtext = new TextField();
+        landtext.setPromptText("Land");
+
+        grid.add(new Label("Naam:"), 0, 0);
+        grid.add(naamtext, 1, 0);
+        grid.add(new Label("Gemeente:"), 0, 1);
+        grid.add(gemeentetext, 1, 1);
+        grid.add(new Label("Postcode:"), 0, 2);
+        grid.add(postcodetext, 1, 2);
+        grid.add(new Label("ondernemingsNR:"), 0, 3);
+        grid.add(ondernemingsNRtext, 1, 3);
+        grid.add(new Label("Land"), 0, 4);
+        grid.add(landtext, 1, 4);
+        dialog.getDialogPane().setContent(grid);
+
+        dialog.setResultConverter(dialogButton -> {
+            if (dialogButton == voegToeButtonType) {
+                if (filterBedrijf == null){
+                    filterBedrijf = new Landbouwbedrijf();
+                }
+                filterBedrijf.setNaam(naamtext.getText().trim());
+                filterBedrijf.setGemeente(gemeentetext.getText().trim());
+                filterBedrijf.setLand(landtext.getText().trim());
+                if (!ondernemingsNRtext.getText().trim().isEmpty()){
+                    filterBedrijf.setOndernemingsNR(Integer.valueOf(ondernemingsNRtext.getText().trim()));
+                }
+                if (!postcodetext.getText().trim().isEmpty()){
+                    filterBedrijf.setPostcode(Integer.valueOf(postcodetext.getText().trim()));
+                }
+                return filterBedrijf;
+            }
+            else return filterBedrijf;
+        });
+        return dialog.showAndWait();
     }
 
 
-}
+    }
