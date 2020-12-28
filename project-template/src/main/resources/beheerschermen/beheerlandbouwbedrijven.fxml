@@ -16,9 +16,9 @@
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </Text>
-      <Button fx:id="btnAdd" layoutX="16.0" layoutY="304.0" mnemonicParsing="false" text="Voeg Toe" />
-      <Button fx:id="btnClose" layoutX="520.0" layoutY="304.0" mnemonicParsing="false" text="Sluiten" />
-      <Button fx:id="btnDelete" layoutX="431.0" layoutY="304.0" mnemonicParsing="false" text="Verwijder" />
-      <Button fx:id="btnFilter" layoutX="517.0" layoutY="10.0" mnemonicParsing="false" text="Filter" />
+      <Button fx:id="btnAddBedrijf" layoutX="16.0" layoutY="304.0" mnemonicParsing="false" text="Voeg Toe" />
+      <Button fx:id="btnCloseBedrijfscherm" layoutX="520.0" layoutY="304.0" mnemonicParsing="false" text="Sluiten" />
+      <Button fx:id="btnDeleteBedrijf" layoutX="431.0" layoutY="304.0" mnemonicParsing="false" text="Verwijder" />
+      <Button fx:id="btnFilterBedrijven" layoutX="517.0" layoutY="10.0" mnemonicParsing="false" text="Filter" />
    </children>
 </AnchorPane>

@@ -2,7 +2,6 @@ package be.kuleuven.csa.controller;
 
 import be.kuleuven.csa.model.databaseConn.CsaDatabaseConn;
 import be.kuleuven.csa.model.domain.Landbouwbedrijf;
-import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
@@ -16,18 +15,17 @@ import javafx.util.converter.IntegerStringConverter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class BeheerLandbouwbedrijvenController {
 
     @FXML
-    private Button btnDelete;
+    private Button btnDeleteBedrijf;
     @FXML
-    private Button btnAdd;
+    private Button btnAddBedrijf;
     @FXML
-    private Button btnClose;
+    private Button btnCloseBedrijfscherm;
     @FXML
-    private Button btnFilter;
+    private Button btnFilterBedrijven;
     @FXML
     private TableView<Landbouwbedrijf> tblLandbouwbedrijven;
     @FXML
@@ -46,19 +44,19 @@ public class BeheerLandbouwbedrijvenController {
     public void initialize() {
         initTable();
 
-        btnAdd.setOnAction(e -> addNewRow());
+        btnAddBedrijf.setOnAction(e -> addNewRow());
 
-        btnDelete.setOnAction(e -> {
+        btnDeleteBedrijf.setOnAction(e -> {
             verifyOneRowSelected();
             deleteCurrentRow();
         });
 
-        btnClose.setOnAction(e -> {
-            var stage = (Stage) btnClose.getScene().getWindow();
+        btnCloseBedrijfscherm.setOnAction(e -> {
+            var stage = (Stage) btnCloseBedrijfscherm.getScene().getWindow();
             stage.close();
         });
 
-        btnFilter.setOnAction(e -> {
+        btnFilterBedrijven.setOnAction(e -> {
             filterBedrijven();
         });
     }
@@ -76,7 +74,7 @@ public class BeheerLandbouwbedrijvenController {
             modifyCurrentRow();
         });
 
-        bedrijfsGemeente.setCellValueFactory((new PropertyValueFactory<>("Gemeente")));
+        bedrijfsGemeente.setCellValueFactory((new PropertyValueFactory<>("gemeente")));
         bedrijfsGemeente.setCellFactory(TextFieldTableCell.forTableColumn());
         bedrijfsGemeente.setOnEditCommit(event -> {
             Landbouwbedrijf selectedBedrijf = event.getRowValue();
@@ -163,14 +161,6 @@ public class BeheerLandbouwbedrijvenController {
         if(tblLandbouwbedrijven.getSelectionModel().getSelectedCells().size() == 0) {
             showAlert("Hela!", "Eerst een bedrijf selecteren hé.");
         }
-    }
-
-    public Landbouwbedrijf getFilterBedrijf() {
-        return filterBedrijf;
-    }
-
-    public void setFilterBedrijf(Landbouwbedrijf filterBedrijf) {
-        this.filterBedrijf = filterBedrijf;
     }
 
     private Optional<Landbouwbedrijf> showAddNewRowDialog(){
