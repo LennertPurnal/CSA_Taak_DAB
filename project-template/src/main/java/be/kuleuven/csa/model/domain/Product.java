@@ -11,7 +11,9 @@ public class Product implements CsaEntity{
     @Column
     private String beschrijving;
 
-    public Product(String naam) {
+    private int aantal;
+
+    public Product(String naam, String product, int aantal ) {
         this.naam = naam;
     }
 
@@ -29,5 +31,13 @@ public class Product implements CsaEntity{
 
     public void setBeschrijving(String beschrijving) {
         this.beschrijving = beschrijving;
+    }
+
+    public int getAantal() {
+        return aantal;
+    }
+
+    public void setAantal(int aantal) {
+        this.aantal = aantal;
     }
 }
