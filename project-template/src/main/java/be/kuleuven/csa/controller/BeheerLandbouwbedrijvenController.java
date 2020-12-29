@@ -122,11 +122,7 @@ public class BeheerLandbouwbedrijvenController {
 
     private void deleteCurrentRow() {
         Landbouwbedrijf selectedRow = tblLandbouwbedrijven.getSelectionModel().getSelectedItem();
-        var entitymanager = CsaDatabaseConn.getDatabaseConn().getEntityManager();
-        entitymanager.getTransaction().begin();
-        entitymanager.remove(selectedRow);
-        CsaDatabaseConn.getDatabaseConn().getCsaRepo().flushAndClear();
-        entitymanager.getTransaction().commit();
+        CsaDatabaseConn.getDatabaseConn().getCsaRepo().deleteRecord(selectedRow);
 
         refreshTable();
     }
@@ -253,6 +249,14 @@ public class BeheerLandbouwbedrijvenController {
         ondernemingsNRtext.setPromptText("Ondernemingsnummer");
         TextField landtext = new TextField();
         landtext.setPromptText("Land");
+
+        if (filterBedrijf != null){
+            naamtext.setText(filterBedrijf.getNaam());
+            gemeentetext.setText(filterBedrijf.getGemeente());
+            postcodetext.setText(String.valueOf(filterBedrijf.getPostcode()));
+            ondernemingsNRtext.setText(String.valueOf(filterBedrijf.getOndernemingsNR()));
+            landtext.setText(filterBedrijf.getLand());
+        }
 
         grid.add(new Label("Naam:"), 0, 0);
         grid.add(naamtext, 1, 0);

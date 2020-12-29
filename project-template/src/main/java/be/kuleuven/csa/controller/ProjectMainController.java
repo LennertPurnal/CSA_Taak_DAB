@@ -13,25 +13,28 @@ import javafx.stage.Stage;
 public class ProjectMainController {
 
     @FXML
-    private Button btnBoerderijen;
+    private Button btnLandbouwbedrijven;
     @FXML
     private Button btnTips;
     @FXML
     private Button btnKlanten;
     @FXML
-    private Button btnInschrijvingen;
+    private Button btnContracten;
     @FXML
     private Button btnProducten;
     @FXML
     private Button btnWeekelijkseBest;
+    @FXML
+    private Button btnAanbiedingen;
 
     public void initialize() {
-        btnBoerderijen.setOnAction(e -> showBeheerScherm("landbouwbedrijven"));
+        btnLandbouwbedrijven.setOnAction(e -> showBeheerScherm("landbouwbedrijven"));
         btnTips.setOnAction(e -> showBeheerScherm("tips"));
         btnKlanten.setOnAction(e -> showBeheerScherm("klanten"));
-        btnInschrijvingen.setOnAction(e -> showBeheerScherm("inschrijvingen"));
+        btnContracten.setOnAction(e -> showBeheerScherm("contracten"));
         btnProducten.setOnAction(e -> showBeheerScherm("producten"));
         btnWeekelijkseBest.setOnAction(e -> showBeheerScherm("weekelijksebestellingen"));
+        btnAanbiedingen.setOnAction(e -> showBeheerScherm("aanbiedingen"));
 
         CsaDatabaseConn.getDatabaseConn().setUp();
     }

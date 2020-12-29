@@ -6,9 +6,25 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="be.kuleuven.csa.controller.BeheerContractenController"
             prefHeight="400.0" prefWidth="600.0">
-
+    <children>
+        <TableView fx:id="tblContracten" layoutX="14.0" layoutY="47.0" prefHeight="246.0" prefWidth="567.0">
+            <columns>
+                <TableColumn prefWidth="75.0" text="C1" />
+            </columns>
+        </TableView>
+        <Text layoutX="16.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Beheer Contracten" wrappingWidth="567.21875">
+            <font>
+                <Font name="System Bold Italic" size="13.0" />
+            </font>
+        </Text>
+        <Button fx:id="btnAddContract" layoutX="16.0" layoutY="304.0" mnemonicParsing="false" text="Maak aan" />
+        <Button fx:id="btnCloseContractScherm" layoutX="520.0" layoutY="304.0" mnemonicParsing="false" text="Sluiten" />
+        <Button fx:id="btnFilterContracten" layoutX="517.0" layoutY="10.0" mnemonicParsing="false" text="Filter" />
+    </children>
 </AnchorPane>

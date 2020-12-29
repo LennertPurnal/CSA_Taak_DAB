@@ -23,5 +23,30 @@ public class Aanbieding implements CsaEntity, Serializable {
         this.prijs = prijs;
     }
 
+    public Aanbieding() {
+    }
 
+    public Pakket getPakket() {
+        return pakket;
+    }
+
+    public void setPakket(Pakket pakket) {
+        this.pakket = pakket;
+    }
+
+    public Landbouwbedrijf getLandbouwbedrijf() {
+        return landbouwbedrijf;
+    }
+
+    public void setLandbouwbedrijf(Landbouwbedrijf landbouwbedrijf) {
+        this.landbouwbedrijf = landbouwbedrijf;
+    }
+
+    public int getPrijs() {
+        return prijs;
+    }
+
+    public void setPrijs(int prijs) {
+        this.prijs = prijs;
+    }
 }

@@ -1,9 +1,8 @@
 package be.kuleuven.csa.model.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Klant implements CsaEntity{
@@ -23,6 +22,9 @@ public class Klant implements CsaEntity{
     @Column
     private String land;
 
+    @OneToMany(mappedBy = "klant")
+    private List<Contract> contracten = new ArrayList<>();
+
     public Klant(String naam, String gemeente, int postcode, String straat, int huisnummer, String land) {
         this.naam = naam;
         this.gemeente = gemeente;
@@ -34,6 +36,8 @@ public class Klant implements CsaEntity{
 
     public Klant() {
     }
+
+    public void voegContractToe(Contract contract){ contracten.add(contract); }
 
     public String getNaam() {
         return naam;
