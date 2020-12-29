@@ -126,18 +126,14 @@ public class BeheerKlantenController {
 
 
     private void addNewRow() {
-        var bedrijfToeTeVoegen = showAddNewRowDialog();
-        bedrijfToeTeVoegen.ifPresent(landbouwbedrijf -> CsaDatabaseConn.getDatabaseConn().getCsaRepo().persistRecord(landbouwbedrijf));
+        var klantToeTeVoegen = showAddNewRowDialog();
+        klantToeTeVoegen.ifPresent(klant -> CsaDatabaseConn.getDatabaseConn().getCsaRepo().persistRecord(klant));
         refreshTable();
     }
 
     private void deleteCurrentRow() {
         Klant selectedRow = tblKlanten.getSelectionModel().getSelectedItem();
-        var entitymanager = CsaDatabaseConn.getDatabaseConn().getEntityManager();
-        entitymanager.getTransaction().begin();
-        entitymanager.remove(selectedRow);
-        CsaDatabaseConn.getDatabaseConn().getCsaRepo().flushAndClear();
-        entitymanager.getTransaction().commit();
+        CsaDatabaseConn.getDatabaseConn().getCsaRepo().deleteRecord(selectedRow);
 
         refreshTable();
     }
@@ -280,6 +276,15 @@ public class BeheerKlantenController {
         huisNRtext.setPromptText("Huisnummer");
         TextField landtext = new TextField();
         landtext.setPromptText("Land");
+
+        if (filterKlant != null){
+            naamtext.setText(filterKlant.getNaam());
+            gemeentetext.setText(filterKlant.getGemeente());
+            postcodetext.setText(String.valueOf(filterKlant.getPostcode()));
+            straattext.setText(filterKlant.getStraat());
+            huisNRtext.setText(String.valueOf(filterKlant.getHuisnummer()));
+            landtext.setText(filterKlant.getLand());
+        }
 
         grid.add(new Label("Naam:"), 0, 0);
         grid.add(naamtext, 1, 0);

@@ -20,6 +20,9 @@ public class Landbouwbedrijf implements CsaEntity{
     @OneToMany(mappedBy = "landbouwbedrijf")
     private List<Aanbieding> aanbiedingen = new ArrayList<>();
 
+    @OneToMany(mappedBy = "landbouwbedrijf")
+    private  List<Contract> contracten = new ArrayList<>();
+
     public Landbouwbedrijf() {} //default constructor
 
     public Landbouwbedrijf(int ondernemingsNR, String naam, String gemeente, int postcode) {
@@ -30,6 +33,12 @@ public class Landbouwbedrijf implements CsaEntity{
     }
 
     public void voegAanbiedingToe(Aanbieding aanbieding){
+        aanbiedingen.add(aanbieding);
+    }
+
+    public void voegContractToe(Contract contract){ contracten.add(contract); }
+
+    public void biedtAan(Aanbieding aanbieding){
         aanbiedingen.add(aanbieding);
     }
 

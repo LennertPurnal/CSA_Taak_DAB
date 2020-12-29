@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="be.kuleuven.csa.controller.BeheerAanbiedingenController"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <children>
+        <TableView fx:id="tblAanbiedingen" layoutX="14.0" layoutY="47.0" prefHeight="246.0" prefWidth="567.0">
+            <columns>
+                <TableColumn prefWidth="75.0" text="C1" />
+            </columns>
+        </TableView>
+        <Text layoutX="16.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Beheer Aanbiedingen" wrappingWidth="567.21875">
+            <font>
+                <Font name="System Bold Italic" size="13.0" />
+            </font>
+        </Text>
+        <Button fx:id="btnAddAanbieding" layoutX="16.0" layoutY="304.0" mnemonicParsing="false" text="Voeg Toe" />
+        <Button fx:id="btnCloseAanbiedingenscherm" layoutX="520.0" layoutY="304.0" mnemonicParsing="false" text="Sluiten" />
+        <Button fx:id="btnDeleteAanbieding" layoutX="431.0" layoutY="304.0" mnemonicParsing="false" text="Verwijder" />
+        <Button fx:id="btnFilterAanbiedingen" layoutX="517.0" layoutY="10.0" mnemonicParsing="false" text="Filter" />
+    </children>
+
+</AnchorPane>
