@@ -3,17 +3,9 @@ package be.kuleuven.csa.model.databaseConn;
 import be.kuleuven.csa.model.domain.CsaEntity;
 import be.kuleuven.csa.model.domain.Klant;
 import be.kuleuven.csa.model.domain.Landbouwbedrijf;
-import org.hibernate.Session;
-import org.hibernate.SessionBuilder;
-import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Restrictions;
 
 import javax.persistence.EntityManager;
-import javax.persistence.Persistence;
-import javax.persistence.criteria.Expression;
-import java.sql.ResultSet;
 import java.util.List;
-import java.util.function.Predicate;
 
 public class CsaDatabaseRepo {
     private final EntityManager entityManager;

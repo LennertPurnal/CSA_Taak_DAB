@@ -2,7 +2,6 @@ package be.kuleuven.csa.controller;
 
 import be.kuleuven.csa.model.databaseConn.CsaDatabaseConn;
 import be.kuleuven.csa.model.domain.Klant;
-import be.kuleuven.csa.model.domain.Landbouwbedrijf;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.Node;

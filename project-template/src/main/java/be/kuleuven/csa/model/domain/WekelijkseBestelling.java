@@ -1,18 +1,23 @@
 package be.kuleuven.csa.model.domain;
 
 
+import java.util.Map;
+
 public class WekelijkseBestelling implements CsaEntity{
     private String bestelNR;
     private int klantID;
     private int contractID; //valt nog te bekijken (misschien beter aanbieding?)
     private boolean afgehaald;
-    //private Map<Product,Integer> producten;                    //was dit voor een bepaalde reden? het gaf errors met de json omzetting
-    private Product[] producten;
+    private Map<String,Integer> producten;
+    private int weeknummer;
+    //private Product[] producten;
+
 
     public WekelijkseBestelling(String bestelNR, int klantID, int contractID) {
         this.bestelNR = bestelNR;
         this.klantID = klantID;
         this.contractID = contractID;
+        afgehaald = false;
     }
 
     public String getBestelNR() {
@@ -39,11 +44,11 @@ public class WekelijkseBestelling implements CsaEntity{
         this.contractID = contractID;
     }
 
-    public Product[] getProducten() {
+    public Map<String, Integer> getProducten() {
         return producten;
     }
 
-    public void setProducten(Product[] producten) {
+    public void setProducten(Map<String, Integer> producten) {
         this.producten = producten;
     }
 
@@ -53,6 +58,14 @@ public class WekelijkseBestelling implements CsaEntity{
 
     public void setAfgehaald(boolean afgehaald) {
         this.afgehaald = afgehaald;
+    }
+
+    public int getWeeknummer() {
+        return weeknummer;
+    }
+
+    public void setWeeknummer(int weeknummer) {
+        this.weeknummer = weeknummer;
     }
 }
 

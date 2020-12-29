@@ -1,7 +1,5 @@
 package be.kuleuven.csa.model.domain;
 
-import com.sun.istack.NotNull;
-
 import javax.persistence.*;
 import java.util.Date;
 
