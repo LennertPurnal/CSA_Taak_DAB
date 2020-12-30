@@ -4,13 +4,14 @@ package be.kuleuven.csa.model.domain;
 import java.util.Map;
 
 public class WekelijkseBestelling implements CsaEntity{
+    private String _id;
     private String bestelNR;
     private int klantID;
     private int contractID; //valt nog te bekijken (misschien beter aanbieding?)
     private boolean afgehaald;
     private Map<String,Integer> producten;
     private int weeknummer;
-    //private Product[] producten;
+
 
 
     public WekelijkseBestelling(String bestelNR, int klantID, int contractID) {
@@ -18,6 +19,14 @@ public class WekelijkseBestelling implements CsaEntity{
         this.klantID = klantID;
         this.contractID = contractID;
         afgehaald = false;
+    }
+
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
     }
 
     public String getBestelNR() {
