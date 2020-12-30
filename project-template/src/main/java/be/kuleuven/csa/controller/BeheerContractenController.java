@@ -48,7 +48,7 @@ public class BeheerContractenController {
     public void initialize() {
         initTable();
 
-        btnAddContract.setOnAction(e -> addNewRow());
+        btnAddContract.setOnAction(e -> addNewRow()); //TODO werk toevoegen van contracten nog verder af
 
         btnCloseContractScherm.setOnAction(e -> {
             var stage = (Stage) btnCloseContractScherm.getScene().getWindow();
