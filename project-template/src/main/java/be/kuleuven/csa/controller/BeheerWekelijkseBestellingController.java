@@ -303,6 +303,15 @@ public class BeheerWekelijkseBestellingController {
 
         Map<String,Integer> producten = new HashMap<>();
 
+
+        for (TextField t : textfields){
+            t.textProperty().addListener((observable, oldValue, newValue) -> {
+                voegtoeButton.setDisable(klantIDtext.getText().isEmpty()  || weeknummertext.getText().isEmpty() || contractIDtext.getText().isEmpty());
+                addProductButton.setDisable(producttext.getText().isEmpty() || aantaltext.getText().isEmpty());
+
+            });
+        }
+
          dialog.setResultConverter(dialogButton -> {
             if (dialogButton == voegToeButtonType){
                 WekelijkseBestelling newWekelijkseBestelling = new WekelijkseBestelling(
@@ -357,7 +366,7 @@ public class BeheerWekelijkseBestellingController {
         weeknummertext.setText(""+selectedBestelling.getWeeknummer());
         TextField afgehaaldtext= new TextField();
         afgehaaldtext.setText(""+selectedBestelling.isAfgehaald());
-        Button bewerkProductenButton = new Button("wijzig producten");
+        Button bewerkProductenButton = new Button("Wijzig producten");
 
         grid.add(new Label("BestelNR:"), 0, 0);
         grid.add(bestelNR, 1, 0);
@@ -400,7 +409,6 @@ public class BeheerWekelijkseBestellingController {
         });
         return dialog.showAndWait();
     }
-
 
     private Optional<WekelijkseBestelling> showUpdateProductenDialog( WekelijkseBestelling selectedBestelling){
         Dialog<WekelijkseBestelling> dialog = new Dialog<>();
