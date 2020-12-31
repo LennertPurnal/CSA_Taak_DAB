@@ -13,8 +13,9 @@ public class Product implements CsaEntity{
 
     private int aantal;
 
-    public Product(String naam, String product, int aantal ) {
+    public Product(String naam, int aantal ) {
         this.naam = naam;
+        this.aantal = aantal;
     }
 
     public String getNaam() {
