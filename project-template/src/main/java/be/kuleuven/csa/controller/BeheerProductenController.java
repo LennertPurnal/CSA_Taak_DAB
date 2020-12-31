@@ -11,6 +11,7 @@ import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.util.converter.IntegerStringConverter;
 
 public class BeheerProductenController {
+    //TODO productenbeheer afwerken
 
     @FXML
     private TableView<Product> tblproducten;

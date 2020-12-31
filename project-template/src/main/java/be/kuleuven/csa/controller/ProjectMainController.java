@@ -26,6 +26,8 @@ public class ProjectMainController {
     private Button btnWeekelijkseBest;
     @FXML
     private Button btnAanbiedingen;
+    @FXML
+    private Button btnPakketten;
 
     public void initialize() {
         btnLandbouwbedrijven.setOnAction(e -> showBeheerScherm("landbouwbedrijven"));
@@ -35,6 +37,7 @@ public class ProjectMainController {
         btnProducten.setOnAction(e -> showBeheerScherm("producten"));
         btnWeekelijkseBest.setOnAction(e -> showBeheerScherm("weekelijksebestellingen"));
         btnAanbiedingen.setOnAction(e -> showBeheerScherm("aanbiedingen"));
+        btnPakketten.setOnAction(e -> showBeheerScherm("pakketten"));
 
         CsaDatabaseConn.getDatabaseConn().setUp();
     }
