@@ -42,6 +42,8 @@ public class ProjectMainController {
         CsaDatabaseConn.getDatabaseConn().setUp();
     }
 
+
+
     private void showBeheerScherm(String id) {
         var resourceName = "beheerschermen/beheer" + id + ".fxml";
         try {

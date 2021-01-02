@@ -2,6 +2,7 @@ package be.kuleuven.csa.controller;
 
 import be.kuleuven.csa.model.databaseConn.CsaDatabaseConn;
 import be.kuleuven.csa.model.domain.Landbouwbedrijf;
+import be.kuleuven.csa.model.domain.Stock;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
@@ -11,6 +12,7 @@ import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.util.converter.IntegerStringConverter;
+import org.lightcouch.CouchDbClient;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -117,6 +119,7 @@ public class BeheerLandbouwbedrijvenController {
     private void addNewRow() {
         var bedrijfToeTeVoegen = showAddNewRowDialog();
         bedrijfToeTeVoegen.ifPresent(landbouwbedrijf -> CsaDatabaseConn.getDatabaseConn().getCsaRepo().persistRecord(landbouwbedrijf));
+        bedrijfToeTeVoegen.ifPresent(landbouwbedrijf  -> dbClientSave(landbouwbedrijf));
         refreshTable();
     }
 
@@ -291,5 +294,14 @@ public class BeheerLandbouwbedrijvenController {
         return dialog.showAndWait();
     }
 
+    private void dbClientSave(Landbouwbedrijf landbouwbedrijf ){
+        //Stock aanmaken op coachDB
+        CouchDbClient dbClient = new CouchDbClient();
+        Stock newStock = new Stock(landbouwbedrijf.getOndernemingsNR());
+        dbClient.save(newStock);
+
+        // shutdown the client
+        dbClient.shutdown();
+    }
 
     }

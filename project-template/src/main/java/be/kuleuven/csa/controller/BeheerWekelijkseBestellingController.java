@@ -107,7 +107,7 @@ public class BeheerWekelijkseBestellingController {
 
         Gson gson = new Gson();
         for(JsonObject json: wekelijkseBestellingenJSON) {
-                        WekelijkseBestelling b = gson.fromJson(json, WekelijkseBestelling.class);
+            WekelijkseBestelling b = gson.fromJson(json, WekelijkseBestelling.class);
             wekelijkseBestellingen.add(b);
             tblWeekelijkseBestellingen.getItems().add(b);
         }
@@ -190,7 +190,7 @@ public class BeheerWekelijkseBestellingController {
 
     private void verifyOneRowSelected() {
         if(tblWeekelijkseBestellingen.getSelectionModel().getSelectedCells().size() == 0) {
-            showAlert("Hela!", "Eerst een bestelling selecteren hé.");
+            showAlert("Hela!", "Eerst een bestelling selecteren he.");
         }
     }
 

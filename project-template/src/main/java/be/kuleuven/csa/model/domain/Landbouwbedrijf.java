@@ -3,6 +3,7 @@ package be.kuleuven.csa.model.domain;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Entity
 public class Landbouwbedrijf implements CsaEntity{
@@ -16,6 +17,7 @@ public class Landbouwbedrijf implements CsaEntity{
     private String gemeente;
     @Column
     private int postcode;
+
 
     @OneToMany(mappedBy = "landbouwbedrijf")
     private List<Aanbieding> aanbiedingen = new ArrayList<>();
@@ -80,5 +82,22 @@ public class Landbouwbedrijf implements CsaEntity{
 
     public void setPostcode(int postcode) {
         this.postcode = postcode;
+    }
+
+
+    public List<Aanbieding> getAanbiedingen() {
+        return aanbiedingen;
+    }
+
+    public void setAanbiedingen(List<Aanbieding> aanbiedingen) {
+        this.aanbiedingen = aanbiedingen;
+    }
+
+    public List<Contract> getContracten() {
+        return contracten;
+    }
+
+    public void setContracten(List<Contract> contracten) {
+        this.contracten = contracten;
     }
 }
