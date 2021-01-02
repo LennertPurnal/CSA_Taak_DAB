@@ -1,10 +1,10 @@
 package be.kuleuven.csa.controller;
 
 import be.kuleuven.csa.model.databaseConn.CsaDatabaseConn;
-import be.kuleuven.csa.model.domain.Contract;
-import be.kuleuven.csa.model.domain.Klant;
-import be.kuleuven.csa.model.domain.Landbouwbedrijf;
-import be.kuleuven.csa.model.domain.Pakket;
+import be.kuleuven.csa.model.domain.*;
+import javafx.beans.binding.Bindings;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
@@ -132,23 +132,31 @@ public class BeheerContractenController {
         ButtonType voegToeButtonType = new ButtonType("Voeg toe", ButtonBar.ButtonData.OK_DONE);
         dialog.getDialogPane().getButtonTypes().addAll(voegToeButtonType, ButtonType.CANCEL);
 
+        Contract newContract = new Contract();
+        Aanbieding aanbieding = new Aanbieding();
+        Klant klant = new Klant();
+
+        Button btnZoekAanbieding = new Button("zoek");
+        Button btnZoekKlant = new Button("zoek");
 
         GridPane grid = new GridPane();
         grid.setHgap(10);
         grid.setVgap(10);
         grid.setPadding(new Insets(20, 150, 10, 10));
 
-        TextField bedrijfText = new TextField();
-        bedrijfText.setPromptText("Landbouwbedrijf");
+        TextField aanbiedingtext = new TextField();
+        aanbiedingtext.setPromptText("pakketnaam");
         TextField klantText = new TextField();
         klantText.setPromptText("Klant");
         TextField datumText = new TextField();
         datumText.setPromptText("beginDatum");
 
-        grid.add(new Label("Landbouwbedrijf*:"), 0, 0);
-        grid.add(bedrijfText, 1, 0);
+        grid.add(new Label("Aanbieding*:"), 0, 0);
+        grid.add(aanbiedingtext, 1, 0);
+        grid.add(btnZoekAanbieding, 2, 0);
         grid.add(new Label("Klant*:"), 0, 1);
         grid.add(klantText, 1, 1);
+        grid.add(btnZoekKlant, 2, 1);
         grid.add(new Label("vanaf*:"), 0, 2);
         grid.add(datumText, 1, 2);
         dialog.getDialogPane().setContent(grid);
@@ -157,21 +165,26 @@ public class BeheerContractenController {
         voegtoeButton.setDisable(true);
 
         List<TextField> textfields = new ArrayList<>();
-        textfields.add(bedrijfText);
+        textfields.add(aanbiedingtext);
         textfields.add(klantText);
         textfields.add(datumText);
 
-
         for (TextField t : textfields){
             t.textProperty().addListener((observable, oldValue, newValue) -> {
-                voegtoeButton.setDisable(bedrijfText.getText().isEmpty() || klantText.getText().isEmpty() || datumText.getText().isEmpty());
+                voegtoeButton.setDisable(newContract.getPakket() == null || klantText.getText().isEmpty() || datumText.getText().isEmpty());
             });
         }
 
-
+        btnZoekAanbieding.setOnAction(e -> {
+            var optionalAanbieding = showZoekAanbiedingDialog(aanbiedingtext.getText().trim());
+            if (optionalAanbieding.isPresent()){
+                newContract.setPakket(optionalAanbieding.get().getPakket());
+                newContract.setLandbouwbedrijf(optionalAanbieding.get().getLandbouwbedrijf());
+                aanbiedingtext.setText(newContract.getPakket().getPakketnaam());
+            }
+        });
 
         dialog.setResultConverter(dialogButton -> {
-            Contract newContract = null;
             if (dialogButton == voegToeButtonType){
                 return newContract;
 
@@ -182,7 +195,48 @@ public class BeheerContractenController {
         return dialog.showAndWait();
     }
 
+    private Optional<Aanbieding> showZoekAanbiedingDialog(String pakketnaam){
+        Dialog<Aanbieding> dialog = new Dialog<>();
+        dialog.setHeaderText("selecteer een aanbieding");
 
+        ButtonType voegToeButtonType = new ButtonType("selecteer", ButtonBar.ButtonData.OK_DONE);
+        dialog.getDialogPane().getButtonTypes().addAll(voegToeButtonType, ButtonType.CANCEL);
+
+        TableView<Aanbieding> tblAanbiedingen = new TableView<>();
+        TableColumn<Aanbieding, String> pakketnaamColumn = new TableColumn<>("pakketnaam");
+        TableColumn<Aanbieding, String> bedrijfColumn = new TableColumn<>("landbouwbedrijf");
+        TableColumn<Aanbieding, Integer> prijsColumn = new TableColumn<>("prijs");
+
+        pakketnaamColumn.setCellValueFactory(aanbieding -> new SimpleStringProperty(aanbieding.getValue().getPakket().getPakketnaam()));
+        bedrijfColumn.setCellValueFactory(aanbieding -> new SimpleStringProperty(aanbieding.getValue().getLandbouwbedrijf().getNaam()));
+        prijsColumn.setCellValueFactory(aanbieding -> new SimpleObjectProperty<>(aanbieding.getValue().getPrijs()));
+
+        tblAanbiedingen.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+        tblAanbiedingen.getColumns().addAll(bedrijfColumn, pakketnaamColumn, prijsColumn);
+
+        dialog.getDialogPane().setPrefWidth(350);
+        dialog.getDialogPane().setContent(tblAanbiedingen);
+
+        tblAanbiedingen.setFixedCellSize(35);
+        tblAanbiedingen.prefHeightProperty().bind(Bindings.size(tblAanbiedingen.getItems()).multiply(tblAanbiedingen.getFixedCellSize()).add(45));
+
+        Aanbieding filteraanbieding = new Aanbieding(new Pakket() ,new Landbouwbedrijf(), 0);
+        filteraanbieding.getPakket().setPakketnaam(pakketnaam);
+        filteraanbieding.getLandbouwbedrijf().setNaam("");
+
+        for (Aanbieding aanbieding : CsaDatabaseConn.getDatabaseConn().getCsaRepo().getAanbiedingen(filteraanbieding, 0 , 100000)){
+            tblAanbiedingen.getItems().add(aanbieding);
+        }
+
+        dialog.setResultConverter(dialogButton -> {
+            if (dialogButton == voegToeButtonType) {
+                return tblAanbiedingen.getSelectionModel().getSelectedItem();
+            }
+            else return null;
+        });
+
+        return dialog.showAndWait();
+    }
 
     private Optional<Contract> showChangeFilterDialog() {
         Landbouwbedrijf bedrijffilter = new Landbouwbedrijf();
