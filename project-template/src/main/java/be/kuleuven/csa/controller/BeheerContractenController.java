@@ -6,6 +6,8 @@ import javafx.beans.binding.Bindings;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
@@ -14,6 +16,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -48,7 +53,7 @@ public class BeheerContractenController {
     public void initialize() {
         initTable();
 
-        btnAddContract.setOnAction(e -> addNewRow()); //TODO werk toevoegen van contracten nog verder af
+        btnAddContract.setOnAction(e -> addNewRow());
 
         btnCloseContractScherm.setOnAction(e -> {
             var stage = (Stage) btnCloseContractScherm.getScene().getWindow();
@@ -85,7 +90,6 @@ public class BeheerContractenController {
 
 
     private void addNewRow() {
-        //TODO nieuw contract aanmaken afwerken
         var contractToeTeVoegen = showAddNewRowDialog();
         contractToeTeVoegen.ifPresent(contract -> CsaDatabaseConn.getDatabaseConn().getCsaRepo().persistRecord(contract));
         refreshTable();
@@ -148,8 +152,21 @@ public class BeheerContractenController {
         aanbiedingtext.setPromptText("pakketnaam");
         TextField klantText = new TextField();
         klantText.setPromptText("Klant");
-        TextField datumText = new TextField();
-        datumText.setPromptText("beginDatum");
+
+        Node voegtoeButton = dialog.getDialogPane().lookupButton(voegToeButtonType);
+        voegtoeButton.setDisable(true);
+
+        final DatePicker datePicker = new DatePicker();
+        datePicker.setOnAction(new EventHandler() {
+            public void handle(Event t) {
+                LocalDate localDate = datePicker.getValue();
+                Date date = java.sql.Date.valueOf(localDate);
+                DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                String datestring = dateFormat.format(date);
+                voegtoeButton.setDisable(newContract.getPakket() == null || newContract.getKlant() == null || datePicker.getValue() == null);
+                newContract.setBegindatum(datestring);
+            }
+        });
 
         grid.add(new Label("Aanbieding*:"), 0, 0);
         grid.add(aanbiedingtext, 1, 0);
@@ -158,20 +175,18 @@ public class BeheerContractenController {
         grid.add(klantText, 1, 1);
         grid.add(btnZoekKlant, 2, 1);
         grid.add(new Label("vanaf*:"), 0, 2);
-        grid.add(datumText, 1, 2);
+        grid.add(datePicker, 1, 2);
         dialog.getDialogPane().setContent(grid);
 
-        Node voegtoeButton = dialog.getDialogPane().lookupButton(voegToeButtonType);
-        voegtoeButton.setDisable(true);
+
 
         List<TextField> textfields = new ArrayList<>();
         textfields.add(aanbiedingtext);
         textfields.add(klantText);
-        textfields.add(datumText);
 
         for (TextField t : textfields){
             t.textProperty().addListener((observable, oldValue, newValue) -> {
-                voegtoeButton.setDisable(newContract.getPakket() == null || klantText.getText().isEmpty() || datumText.getText().isEmpty());
+                voegtoeButton.setDisable(newContract.getPakket() == null || newContract.getKlant() == null || datePicker.getValue() == null);
             });
         }
 
@@ -184,10 +199,17 @@ public class BeheerContractenController {
             }
         });
 
+        btnZoekKlant.setOnAction(e -> {
+            var optionalKlant = showZoekKlantDialog(klantText.getText().trim());
+            if (optionalKlant.isPresent()){
+                newContract.setKlant(optionalKlant.get());
+                klantText.setText(newContract.getKlant().getNaam());
+            }
+        });
+
         dialog.setResultConverter(dialogButton -> {
             if (dialogButton == voegToeButtonType){
                 return newContract;
-
             }
             return null;
         });
@@ -231,6 +253,49 @@ public class BeheerContractenController {
         dialog.setResultConverter(dialogButton -> {
             if (dialogButton == voegToeButtonType) {
                 return tblAanbiedingen.getSelectionModel().getSelectedItem();
+            }
+            else return null;
+        });
+
+        return dialog.showAndWait();
+    }
+
+    private Optional<Klant> showZoekKlantDialog(String klantnaam){
+        Dialog<Klant> dialog = new Dialog<>();
+        dialog.setHeaderText("selecteer een klant");
+
+        ButtonType voegToeButtonType = new ButtonType("selecteer", ButtonBar.ButtonData.OK_DONE);
+        dialog.getDialogPane().getButtonTypes().addAll(voegToeButtonType, ButtonType.CANCEL);
+
+        TableView<Klant> tblKlanten = new TableView<>();
+        TableColumn<Klant, String> klantnaamColumn = new TableColumn<>("klant");
+        TableColumn<Klant, Integer> klantNRColumn = new TableColumn<>("klantNR");
+
+        klantnaamColumn.setCellValueFactory(klant -> new SimpleStringProperty(klant.getValue().getNaam()));
+        klantNRColumn.setCellValueFactory(klant -> new SimpleObjectProperty<>(klant.getValue().getKlantID()));
+
+        tblKlanten.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+        tblKlanten.getColumns().addAll(klantNRColumn, klantnaamColumn);
+
+        dialog.getDialogPane().setPrefWidth(350);
+        dialog.getDialogPane().setContent(tblKlanten);
+
+        tblKlanten.setFixedCellSize(35);
+        tblKlanten.prefHeightProperty().bind(Bindings.size(tblKlanten.getItems()).multiply(tblKlanten.getFixedCellSize()).add(45));
+
+        Klant filterklant = new Klant();
+        filterklant.setNaam(klantnaam);
+        filterklant.setGemeente("");
+        filterklant.setStraat("");
+        filterklant.setLand("");
+
+        for (Klant klant : CsaDatabaseConn.getDatabaseConn().getCsaRepo().getKlanten(filterklant)){
+            tblKlanten.getItems().add(klant);
+        }
+
+        dialog.setResultConverter(dialogButton -> {
+            if (dialogButton == voegToeButtonType) {
+                return tblKlanten.getSelectionModel().getSelectedItem();
             }
             else return null;
         });
@@ -287,5 +352,6 @@ public class BeheerContractenController {
         });
         return dialog.showAndWait();
     }
+
 
 }
