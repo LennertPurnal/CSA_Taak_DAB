@@ -10,17 +10,18 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="be.kuleuven.csa.controller.BeheerTipsController">
    <children>
-      <TableView fx:id="tblTips" layoutX="14.0" layoutY="43.0" prefHeight="271.0" prefWidth="576.0">
+      <TableView fx:id="tblTips" layoutX="15.0" layoutY="43.0" prefHeight="300.0" prefWidth="990.0">
         <columns>
           <TableColumn prefWidth="75.0" text="C1" />
           <TableColumn prefWidth="75.0" text="C2" />
         </columns>
       </TableView>
-      <Text layoutX="19.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Beheer Kooktip database" wrappingWidth="561.21875">
+      <Text layoutX="19.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Beheer Kooktip database" wrappingWidth="1000.0">
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </Text>
-      <Button layoutX="14.0" layoutY="331.0" mnemonicParsing="false" text="Voeg toe, ..." />
+      <Button fx:id="btnDelete" layoutX="25.0" layoutY="350.0" mnemonicParsing="false" text="Verwijder" />
+       <Button fx:id="btnClose" layoutX="960.0" layoutY="350.0" mnemonicParsing="false" text="Sluiten" />
    </children>
 </AnchorPane>

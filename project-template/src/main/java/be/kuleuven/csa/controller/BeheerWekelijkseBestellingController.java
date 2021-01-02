@@ -55,7 +55,7 @@ public class BeheerWekelijkseBestellingController {
     @FXML
     public TableColumn<WekelijkseBestelling, Boolean> Afgehaald = new TableColumn<>("Afgehaald");
     @FXML
-    public TableColumn<WekelijkseBestelling, Boolean> Weeknummer = new TableColumn<>("Weeknummer");
+    public TableColumn<WekelijkseBestelling, Integer> Weeknummer = new TableColumn<>("Weeknummer");
 
     List<WekelijkseBestelling> wekelijkseBestellingen = new ArrayList<WekelijkseBestelling>();
 
@@ -87,7 +87,6 @@ public class BeheerWekelijkseBestellingController {
             row.setOnMouseClicked(event -> {
                 if (!row.isEmpty() && event.getButton()== MouseButton.PRIMARY
                         && event.getClickCount() == 2) {
-
                     WekelijkseBestelling clickedRow = row.getItem();
                     showProductenDialog (clickedRow);
                 }
@@ -108,8 +107,10 @@ public class BeheerWekelijkseBestellingController {
         Gson gson = new Gson();
         for(JsonObject json: wekelijkseBestellingenJSON) {
             WekelijkseBestelling b = gson.fromJson(json, WekelijkseBestelling.class);
-            wekelijkseBestellingen.add(b);
-            tblWeekelijkseBestellingen.getItems().add(b);
+            if(b.getBestelNR() != null) {
+                wekelijkseBestellingen.add(b);
+                tblWeekelijkseBestellingen.getItems().add(b);
+            }
         }
 
         tblWeekelijkseBestellingen.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
@@ -140,8 +141,10 @@ public class BeheerWekelijkseBestellingController {
         Gson gson = new Gson();
         for(JsonObject json: wekelijkseBestellingenJSON) {
             WekelijkseBestelling b = gson.fromJson(json, WekelijkseBestelling.class);
-            wekelijkseBestellingen.add(b);
-            tblWeekelijkseBestellingen.getItems().add(b);
+            if(b.getBestelNR() != null) {
+                wekelijkseBestellingen.add(b);
+                tblWeekelijkseBestellingen.getItems().add(b);
+            }
         }
         // shutdown the client
         dbClient.shutdown();

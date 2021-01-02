@@ -40,7 +40,6 @@ public class BeheerProductenController {
     public void initialize() {
         initTable();
 
-
         btnDelete.setOnAction(e -> {
             verifyOneRowSelected();
             deleteCurrentRow();
@@ -114,13 +113,9 @@ public class BeheerProductenController {
         Gson gson = new Gson();
 
         for(JsonObject json: LandbouwbedrijvenStockJSON) {
-            System.out.println(" ------------------ JSON ----------------");
-            System.out.println(json);
             Stock s = gson.fromJson(json, Stock.class);
             Map<String,Integer> stockSelectedLb = s.getStock();
-            System.out.println("STOCK PRINTEN VAN " + s.getOndernemingsNR());
             if(SelectedONR.getValue().equals(s.getOndernemingsNR()+"")) {
-                System.out.println("STOCK PRINTEN VAN " + s.getOndernemingsNR());
                 for (Map.Entry<String, Integer> p : stockSelectedLb.entrySet()) {
                     Product pr = new Product(p.getKey(), Integer.parseInt(p.getValue() + ""));
                     tblproducten.getItems().add(pr);
@@ -158,7 +153,7 @@ public class BeheerProductenController {
     private void deleteCurrentRow() {
         Product selectedProduct = tblproducten.getSelectionModel().getSelectedItem();
         stockSelectedLb.remove(selectedProduct.getNaam());
-        modifyCurrentRow();
+        update();
         refreshTable();
     }
 
