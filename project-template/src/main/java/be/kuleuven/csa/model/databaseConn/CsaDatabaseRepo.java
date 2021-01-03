@@ -16,6 +16,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 import javax.persistence.criteria.Expression;
 import javax.persistence.criteria.Join;
+import javax.persistence.criteria.Predicate;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.util.List;
@@ -65,6 +66,12 @@ public class CsaDatabaseRepo {
             var gemeenterestriction = criteriabuilder.like(root.get("gemeente"), "%"+filter.getGemeente()+"%");
             var landrestricrion = criteriabuilder.like(root.get("land"),"%"+filter.getLand()+"%");
             var filteredBoerderijen = query.where(criteriabuilder.and(naamrestriction, gemeenterestriction, landrestricrion));
+            if (filter.getPostcode()!=0){
+                filteredBoerderijen = filteredBoerderijen.where(criteriabuilder.equal(root.get("postcode"), filter.getPostcode()));
+            }
+            if (filter.getOndernemingsNR()!=0){
+                filteredBoerderijen = filteredBoerderijen.where(criteriabuilder.equal(root.get("ondernemingsNR"),filter.getOndernemingsNR()));
+            }
             var filteredBoerderijenQuery = entityManager.createQuery(filteredBoerderijen);
             resultsList = filteredBoerderijenQuery.getResultList();
         }
@@ -86,8 +93,14 @@ public class CsaDatabaseRepo {
             var gemeenterestriction = criteriabuilder.like(root.get("gemeente"), "%"+filter.getGemeente()+"%");
             var straatrestriction = criteriabuilder.like(root.get("straat"), "%"+filter.getStraat()+"%");
             var landrestriction = criteriabuilder.like(root.get("land"),"%"+filter.getLand()+"%");
-            var filteredBoerderijen = query.where(criteriabuilder.and(naamrestriction, gemeenterestriction, straatrestriction, landrestriction));
-            var filteredBoerderijenQuery = entityManager.createQuery(filteredBoerderijen);
+            var filteredKlanten = query.where(criteriabuilder.and(naamrestriction, gemeenterestriction, straatrestriction, landrestriction));
+            if (filter.getPostcode()!=0){
+                filteredKlanten = filteredKlanten.where(criteriabuilder.equal(root.get("postcode"),filter.getPostcode()));
+            }
+            if (filter.getHuisnummer()!=0){
+                filteredKlanten = filteredKlanten.where(criteriabuilder.equal(root.get("huisnummer"),filter.getHuisnummer()));
+            }
+            var filteredBoerderijenQuery = entityManager.createQuery(filteredKlanten);
             resultsList = filteredBoerderijenQuery.getResultList();
         }
         return resultsList;

@@ -27,7 +27,6 @@
         <Button fx:id="btnAddPakket" layoutX="16.0" layoutY="304.0" mnemonicParsing="false" text="Voeg Toe" />
         <Button fx:id="btnClosePakkettenscherm" layoutX="520.0" layoutY="304.0" mnemonicParsing="false" text="Sluiten" />
         <Button fx:id="btnDeletePakket" layoutX="431.0" layoutY="304.0" mnemonicParsing="false" text="Verwijder" />
-        <Button fx:id="btnFilterPakket" layoutX="517.0" layoutY="10.0" mnemonicParsing="false" text="Filter" />
     </children>
 
 </AnchorPane>

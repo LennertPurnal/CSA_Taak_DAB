@@ -27,8 +27,6 @@ public class BeheerPakkettenController {
     @FXML
     private Button btnClosePakkettenscherm;
     @FXML
-    private Button btnFilterPakket;
-    @FXML
     private TableView<Pakket> tblPakketten;
     @FXML
     public TableColumn<Pakket, String> pakketnaamColumn = new TableColumn<>("Pakketnaam");
@@ -56,10 +54,6 @@ public class BeheerPakkettenController {
             stage.close();
         });
 
-        btnFilterPakket.setOnAction(e -> {
-            //TODO filter voor pakketten toevoegen?
-            //filterPakketten();
-        });
     }
 
     private void initTable() {

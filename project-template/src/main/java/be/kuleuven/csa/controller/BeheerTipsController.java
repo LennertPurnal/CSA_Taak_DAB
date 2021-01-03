@@ -72,7 +72,7 @@ public class BeheerTipsController {
         });
 
 
-        // TODO verwijderen en "echte data" toevoegen!
+
         CouchDbClient dbClient = new CouchDbClient();
 
         List<JsonObject> wekelijkseBestellingenJSON = dbClient.view("_all_docs").key("TIPS").includeDocs(true).query(JsonObject.class);

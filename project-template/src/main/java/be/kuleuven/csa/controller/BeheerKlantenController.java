@@ -43,8 +43,6 @@ public class BeheerKlantenController {
 
     private Klant filterKlant;
 
-    //TODO postcode en huisNR filter nog toevoegen
-
     public void initialize() {
         initTable();
 

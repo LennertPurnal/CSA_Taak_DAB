@@ -98,8 +98,7 @@ public class BeheerWekelijkseBestellingController {
         bestelNR.setCellValueFactory(new PropertyValueFactory<>("bestelNR"));
         Afgehaald.setCellValueFactory((new PropertyValueFactory<>("afgehaald")));
         Weeknummer.setCellValueFactory((new PropertyValueFactory<>("weeknummer")));
-
-        // TODO verwijderen en "echte data" toevoegen!
+        
         CouchDbClient dbClient = new CouchDbClient();
 
         List<JsonObject> wekelijkseBestellingenJSON = dbClient.view("_all_docs").startKey("B").includeDocs(true).query(JsonObject.class);
