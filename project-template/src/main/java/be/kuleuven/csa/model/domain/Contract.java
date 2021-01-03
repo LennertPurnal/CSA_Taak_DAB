@@ -26,8 +26,7 @@ public class Contract implements CsaEntity{
     private String vervaldatum;
 
 
-    public Contract(int contractID, Pakket pakket, Klant klant, Landbouwbedrijf landbouwbedrijf, String begindatum) {
-        this.contractID = contractID;
+    public Contract(Pakket pakket, Klant klant, Landbouwbedrijf landbouwbedrijf, String begindatum) {
         this.pakket = pakket;
         this.klant = klant;
         this.landbouwbedrijf = landbouwbedrijf;

@@ -43,6 +43,8 @@ public class BeheerLandbouwbedrijvenController {
 
     private Landbouwbedrijf filterBedrijf;
 
+    //TODO ondernemingsNR en postcode filteren nog toevoegen
+
     public void initialize() {
         initTable();
 
