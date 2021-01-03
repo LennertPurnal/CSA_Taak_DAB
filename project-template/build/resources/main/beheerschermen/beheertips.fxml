@@ -22,6 +22,6 @@
          </font>
       </Text>
       <Button fx:id="btnDelete" layoutX="25.0" layoutY="350.0" mnemonicParsing="false" text="Verwijder" />
-       <Button fx:id="btnClose" layoutX="960.0" layoutY="350.0" mnemonicParsing="false" text="Sluiten" />
+       <Button fx:id="btnClose" layoutX="925.0" layoutY="350.0" mnemonicParsing="false" text="Sluiten" />
    </children>
 </AnchorPane>
