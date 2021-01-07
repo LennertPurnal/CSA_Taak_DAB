@@ -241,8 +241,20 @@ public class BeheerWekelijkseBestellingController {
         int n = 1;
         String bn = "B" + n;
 
-        for(WekelijkseBestelling b : wekelijkseBestellingen){
-            String bx = b.getBestelNR();
+        for(WekelijkseBestelling b1 : wekelijkseBestellingen){
+            String bx = b1.getBestelNR();
+            System.out.println("bx= " + bx);
+            System.out.println("bn= " + bn);
+            while(bn.equals(bx)){
+                n++;
+                bn = "B" + n;
+            }
+        }
+
+        for(WekelijkseBestelling b2 : wekelijkseBestellingen){
+            String bx = b2.getBestelNR();
+            System.out.println("bx= " + bx);
+            System.out.println("bn= " + bn);
             while(bn.equals(bx)){
                 n++;
                 bn = "B" + n;

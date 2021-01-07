@@ -86,17 +86,19 @@ public class BeheerProductenController {
         for(JsonObject json: LandbouwbedrijvenStockJSON) {
 
             Stock s = gson.fromJson(json, Stock.class);
-            SelectedONR.getItems().add(s.getOndernemingsNR()+"");
+            if(s.getOndernemingsNR() != 0) {
+                SelectedONR.getItems().add(s.getOndernemingsNR() + "");
+            }
             stockSelectedLb = s.getStock();
 
-                if (SelectedONR.isShowing() && SelectedONR.getValue().equals(s.getOndernemingsNR()+"")) {
-                    for (Map.Entry<String, Integer> p : stockSelectedLb.entrySet()) {
-                        Product pr = new Product(p.getKey(), Integer.parseInt(p.getValue() + ""));
-                        tblproducten.getItems().add(pr);
-                    }
-                    Product pr = new Product("New product", 0);
+            if (SelectedONR.isShowing() && SelectedONR.getValue().equals(s.getOndernemingsNR()+"")) {
+                for (Map.Entry<String, Integer> p : stockSelectedLb.entrySet()) {
+                    Product pr = new Product(p.getKey(), Integer.parseInt(p.getValue() + ""));
                     tblproducten.getItems().add(pr);
                 }
+                Product pr = new Product("New product", 0);
+                tblproducten.getItems().add(pr);
+            }
         }
         tblproducten.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         tblproducten.getColumns().addAll(productNaam,aantalProduct);
